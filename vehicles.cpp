@@ -5,5 +5,3 @@
 /*** Date : 09/21/2020                                  ***/
 /*** Description: vehicles class                        ***/
 /**********************************************************/
-
-//Just making sure i know how the fuck to use git
