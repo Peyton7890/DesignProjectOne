@@ -16,6 +16,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <ostream>
+#include <vector>
 
 using namespace std;
 
@@ -45,8 +47,9 @@ for(int i = 0; i < 18; i++){
     playerCredits.push_back(temp2);
 }
 
+inputFile.close("quidditch_team.dat");
+
 People driver1;
-People driver2;
 People driver3;
 People driver4;
 People driver5;

@@ -5,7 +5,11 @@
 /*** Date : 09/21/2020                                  ***/
 /*** Description: header file for people class          ***/
 /**********************************************************/
-#include iostream
+
+//#ifndef PEOPLEH
+//#define PEOPLEH
+
+#include <iostream>
 
 using namespace std;
 
@@ -16,10 +20,10 @@ class People {
     string vehicleType;
 
   public:
-    void assignPassenger(string);
+    void assignPassenger(string passName);
     void printPassenger();
 
-    void assignDriver(string, int); //Int 1 = pickup, int 2 = compact, int 3 = sedan
+    void assignDriver(string driverName, int type); //Int 1 = pickup, int 2 = compact, int 3 = sedan
     void printDriver();
 
 }

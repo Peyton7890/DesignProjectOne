@@ -13,7 +13,7 @@ using namespace std;
  }
 
 void People::printPassenger(){
-     cout << passName;
+     cout << name;
  }
 
 void People::assignDriver(string driverName, int type){
