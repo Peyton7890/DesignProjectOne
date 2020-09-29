@@ -6,10 +6,11 @@
 /*** Description: header file for vehicles class        ***/
 /**********************************************************/
 #include <iostream>
+#include "reservation.h"
 
 using namespace std;
 
-class Vehicles : public Reservations{
+class Vehicles : public Reservation{
 protected:
     string vehicleColor;
     int availableSeats;

@@ -24,7 +24,6 @@ int Reservation::createReservation(People& player){
     }else {
         cout << player.name << "has " << player.credits << "remaining";
 
-
         //The visual interface for selecting a seat
         cout << "Truck" << "        " << "Compact" << "       " << "Sedan" << "       " << endl;
         cout << "Purple" << "      " << "Red" << "          " << "Blue" << "         " << endl;
@@ -42,27 +41,43 @@ int Reservation::createReservation(People& player){
         cout << "AVAILIBLE INPUTS: front, back, rightBack, leftBack" << endl;
         cout << "Or you can input, the car type, the car color, and the seat number" << endl;
         cout << "Example: sedan yellow 2" << endl;
+        cout << "Type 1 for the first method, type 2 for the second" << endl;
 
-        while (loopHold == true) {
+        int seatSelection = 0;
+
+        cin >> seatSelection;
+
+        if(seatSelection == 1) {
+            while (loopHold == true) {
+
+                cin >> carType;
+
+                //Checks if the the seat input is correct, if not it outputs an error
+                if (carType == "back" or carType == "frontSide" or carType == "rightBack" or carType == "leftBack") {
+                    if (findNearestSeat(carType) == true) {
+                        cout << "Seat successfully reserved" << endl;
+
+                        //Assigns reservation number
+                        //reservationNumber.at(currentReservation) = currentReservation;
+
+                        loopHold = false;
+                        break;
+                    } else {
+                        cout << "Seat not availible" << endl;
+                    }
+                }
+
+
+            }
+
+        }else if(seatSelection == 2) {
 
             cin >> carType;
             cin >> carColor;
             cin >> seatNumber;
 
-            //Checks if the the seat input is correct, if not it outputs an error
-            if (carType == "back" or carType == "frontSide" or carType == "rightBack" or carType == "leftBack") {
-                if (findNearestSeat(carType) == true) {
-                    cout << "Seat successfully reserved" << endl;
+            //Write specifying a specific seat
 
-                    //Assigns reservation number
-                    //reservationNumber.at(currentReservation) = currentReservation;
-
-                    loopHold = false;
-                    break;
-                } else {
-                    cout << "Seat not availible" << endl;
-                }
-            }
         }
     }
 

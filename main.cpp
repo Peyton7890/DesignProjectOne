@@ -7,7 +7,6 @@
 /**********************************************************/
 
 #include "people.h"
-
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -59,7 +58,4 @@ int main() {
     for(int i = 0; i < passengers.size(); i++){
         passengers.at(i).assignPassenger(playerNames.at(i), playerCredits.at(i));
     }
-
-
-
 }
