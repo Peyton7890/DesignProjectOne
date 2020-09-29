@@ -5,3 +5,14 @@
 /*** Date : 09/21/2020                                  ***/
 /*** Description: header file for compact class         ***/
 /**********************************************************/
+
+#ifndef COMPACTH
+#define COMPACTH
+
+#include "vehicles.h"
+
+class Compact : public Vehicles{
+
+};
+
+#endif

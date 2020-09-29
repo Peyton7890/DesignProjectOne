@@ -21,6 +21,9 @@ void People::assignDriver(string driverName, int type, int color){
      name = driverName;
     if(type == 1){
         vehicleType == "pickup";
+
+        //Call into sedan function
+        Sedan(Name, color);
     }
     if(type == 2){
         vehicleType == "compact";

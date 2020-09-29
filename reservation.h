@@ -9,13 +9,6 @@
 #include <string>
 #include <vector>
 
-class Reservation {
-  private:
-    vector<int> reservationNumber(18);
+class Reservations{
 
-  public:
-    int createReservation(string);
-    void modifyReservation(int);
-    void deleteReservation(int);
-    void printReservation(int);
 };

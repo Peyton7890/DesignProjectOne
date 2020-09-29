@@ -32,7 +32,7 @@ inputFile.open("quidditch_team.dat");
 //Inputting all of the drivers into a vector
 for(int i = 0; i < 6; i++){
     string temp;
-    cin >> temp;
+    getline(cin, temp);
     drivers.push_back(temp);
 }
 
@@ -41,8 +41,10 @@ for(int i = 0; i < 18; i++){
     string temp;
     string temp2;
 
-    cin >> temp;
-    cin >> temp2;
+    getline(cin, temp);
+    temp.back() = temp2;
+    temp.pop_back();
+    temp.pop_back();
     players.push_back(temp);
     playerCredits.push_back(temp2);
 }

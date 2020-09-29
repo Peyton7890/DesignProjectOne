@@ -9,11 +9,11 @@
 
 using namespace std;
 
-class Vehicles {
-  private:
+class Vehicles : public Reservations{
+protected:
     string vehicleColor;
     int availableSeats;
-    vector<bool> seatOccupancy 18;
+    vector<bool> seatOccupancy(18);
 
     int frontSeatVal = 1;
     int backSeatVal = 3;
@@ -21,7 +21,8 @@ class Vehicles {
     int middleBackSeatVal = 1;
 
 
-  public:
+public:
     void displayVehicle();
+    bool findSeat(string seatType);
     
-}
+};
