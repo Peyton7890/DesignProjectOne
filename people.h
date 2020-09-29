@@ -6,8 +6,8 @@
 /*** Description: header file for people class          ***/
 /**********************************************************/
 
-//#ifndef PEOPLEH
-//#define PEOPLEH
+#ifndef PEOPLEH
+#define PEOPLEH
 
 #include <iostream>
 
@@ -23,7 +23,7 @@ class People {
     void assignPassenger(string passName, int currCredits);
     void printPassenger();
 
-    void assignDriver(string driverName, int type); //Int 1 = pickup, int 2 = compact, int 3 = sedan
+    void assignDriver(string driverName, int type, string color); //Int 1 = pickup, int 2 = compact, int 3 = sedan
     void printDriver();
 
 }

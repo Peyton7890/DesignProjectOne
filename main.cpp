@@ -75,12 +75,12 @@ People passenger17;
 People passenger18;
 
 //Specify the color of the car NEED
-driver1.assignDriver(drivers.at(1), 1);
-driver2.assignDriver(drivers.at(2), 2);
-driver3.assignDriver(drivers.at(3), 2);
-driver4.assignDriver(drivers.at(4), 2);
-driver5.assignDriver(drivers.at(5), 3);
-driver6.assignDriver(drivers.at(6), 3);
+driver1.assignDriver(drivers.at(1), 1, "purple");
+driver2.assignDriver(drivers.at(2), 2, "red");
+driver3.assignDriver(drivers.at(3), 2, "blue");
+driver4.assignDriver(drivers.at(4), 2, "yellow");
+driver5.assignDriver(drivers.at(5), 3, "blue");
+driver6.assignDriver(drivers.at(6), 3, "green");
 
 //Assigning Passengers
 passenger1.assignPassenger(players.at(1), playerCredits.at(1));

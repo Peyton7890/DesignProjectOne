@@ -17,7 +17,7 @@ void People::printPassenger(){
      cout << name;
  }
 
-void People::assignDriver(string driverName, int type){
+void People::assignDriver(string driverName, int type, int color){
      name = driverName;
     if(type == 1){
         vehicleType == "pickup";
@@ -30,4 +30,6 @@ void People::assignDriver(string driverName, int type){
     }
  }
 
-void People::printDriver();
+void People::printDriver(){
+     cout << name;
+ }
