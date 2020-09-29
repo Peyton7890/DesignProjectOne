@@ -8,8 +8,9 @@
 #include "people.h"
 using namespace std;
 
- void People::assignPassenger(string passName){
+ void People::assignPassenger(string passName, int currCredits){
      name = passName;
+     credits = currCredits;
  }
 
 void People::printPassenger(){

@@ -15,12 +15,12 @@ using namespace std;
 
 class People {
   private:
-    int numOfCredits = 20;
+    int credits;
     string name;
     string vehicleType;
 
   public:
-    void assignPassenger(string passName);
+    void assignPassenger(string passName, int currCredits);
     void printPassenger();
 
     void assignDriver(string driverName, int type); //Int 1 = pickup, int 2 = compact, int 3 = sedan
