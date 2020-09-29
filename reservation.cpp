@@ -10,9 +10,8 @@
 #include <string>
 #include <locale>
 #include "people.h"
-#include "reservation.h"
 
-int Reservation::createReservation(People playerName){
+int Reservation::createReservation(People& player){
 
     bool loopHold = true;
     string carType;
@@ -20,52 +19,52 @@ int Reservation::createReservation(People playerName){
     int seatNumber = 0;
 
     //Checks if the user has enough credits to make a reservation
-    if(credits > 0) {
-        cout << name << "has " << credits << "remaining";
-    }else{
+    if(player.credits < 0) {
         cout << "Not enough credits remaining" << endl;
-    }
+    }else {
+        cout << player.name << "has " << player.credits << "remaining";
 
-    //The visual interface for selecting a seat
-    cout << "Truck" << "        " << "Compact" << "       " << "Sedan" << "       " << endl;
-    cout << "Purple" << "      " << "Red" << "          " << "Blue" << "         " << endl;
 
-    cout << endl << endl << endl << endl;
+        //The visual interface for selecting a seat
+        cout << "Truck" << "        " << "Compact" << "       " << "Sedan" << "       " << endl;
+        cout << "Purple" << "      " << "Red" << "          " << "Blue" << "         " << endl;
 
-    cout << "            " << "Blue" << "        " << "Green" << "       " << endl;
+        cout << endl << endl << endl << endl;
 
-    cout << endl << endl << endl << endl;
+        cout << "            " << "Blue" << "        " << "Green" << "       " << endl;
 
-    cout << "            " << "Yellow" << "     " << endl;
+        cout << endl << endl << endl << endl;
 
-    cout << "You have two options two reserve a seat" << endl;
-    cout << "Type a specific seat type to find the type of seat in any car" << endl;
-    cout << "AVAILIBLE INPUTS: front, back, rightBack, leftBack" << endl;
-    cout << "Or you can input, the car type, the car color, and the seat number" << endl;
-    cout << "Example: sedan yellow 2" << endl;
+        cout << "            " << "Yellow" << "     " << endl;
 
-    while(loopHold == true) {
+        cout << "You have two options to reserve a seat" << endl;
+        cout << "Type a specific seat type to find the type of seat in any car" << endl;
+        cout << "AVAILIBLE INPUTS: front, back, rightBack, leftBack" << endl;
+        cout << "Or you can input, the car type, the car color, and the seat number" << endl;
+        cout << "Example: sedan yellow 2" << endl;
 
-        cin >> carType;
-        cin >> carColor;
-        cin >> seatNumber;
+        while (loopHold == true) {
 
-        //Checks if the the seat input is correct, if not it outputs an error
-        if (carType == "back" or carType == "frontSide" or carType == "rightBack" or carType == "leftBack") {
-            if (findNearestSeat(carType) == true) {
-                cout << "Seat successfully reserved" << endl;
+            cin >> carType;
+            cin >> carColor;
+            cin >> seatNumber;
 
-                //Assigns reservation number
-                //reservationNumber.at(currentReservation) = currentReservation;
+            //Checks if the the seat input is correct, if not it outputs an error
+            if (carType == "back" or carType == "frontSide" or carType == "rightBack" or carType == "leftBack") {
+                if (findNearestSeat(carType) == true) {
+                    cout << "Seat successfully reserved" << endl;
 
-                loopHold = false;
-                break;
-            } else {
-                cout << "Seat not availible" << endl;
+                    //Assigns reservation number
+                    //reservationNumber.at(currentReservation) = currentReservation;
+
+                    loopHold = false;
+                    break;
+                } else {
+                    cout << "Seat not availible" << endl;
+                }
             }
         }
     }
-
 
 }
 
@@ -76,3 +75,4 @@ void modifyReservation(int reservationNumber){
 void deleteReservation(int reservationNumber);
 
 void printReservation(int);
+

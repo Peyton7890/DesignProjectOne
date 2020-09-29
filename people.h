@@ -14,7 +14,7 @@
 
 using namespace std;
 
-class People : public Reservations{
+class People : public Reservation{
 protected:
     int credits;
     string name;
@@ -24,8 +24,12 @@ public:
     void assignPassenger(string passName, int currCredits);
     void printPassenger();
 
-    void assignDriver(string driverName, int type, string color); //Int 1 = pickup, int 2 = compact, int 3 = sedan
+    friend class Reservation;
+
+    void assignDriver(string driverName); //Int 1 = pickup, int 2 = compact, int 3 = sedan
     void printDriver();
+
+
 
 };
 

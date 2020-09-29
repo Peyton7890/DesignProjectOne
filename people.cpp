@@ -17,22 +17,11 @@ void People::printPassenger(){
      cout << name;
  }
 
-void People::assignDriver(string driverName, int type, int color){
+void People::assignDriver(string driverName){
      name = driverName;
-    if(type == 1){
-        vehicleType == "pickup";
-
-        //Call into sedan function
-        Sedan(Name, color);
-    }
-    if(type == 2){
-        vehicleType == "compact";
-    }
-    if(type == 3){
-        vehicleType == "sedan";
-    }
  }
 
 void People::printDriver(){
      cout << name;
  }
+
