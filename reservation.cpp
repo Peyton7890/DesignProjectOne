@@ -12,7 +12,7 @@
 #include "people.h"
 #include "reservation.h"
 
-int createReservation(People playerName){
+int Reservation::createReservation(People playerName){
 
     bool loopHold = true;
     string carType;

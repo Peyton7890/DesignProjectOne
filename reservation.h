@@ -8,7 +8,10 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "vehicles.h"
+#include "people.h"
 
-class Reservations{
-
+class Reservation {
+    Protected:
+        int createReservation(People playerName);
 };

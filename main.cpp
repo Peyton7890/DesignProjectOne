@@ -6,12 +6,7 @@
 /*** Description: main file for the design project      ***/
 /**********************************************************/
 
-#include "people.h"
 #include "reservation.h"
-#include "vehicles.h"
-#include "pickup.h"
-#include "sedan.h"
-#include "compact.h"
 
 #include <iostream>
 #include <string>
