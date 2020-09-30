@@ -11,7 +11,7 @@
 #include <locale>
 #include "people.h"
 
-int Reservation::createReservation(People& player){
+void Reservation::createReservation(People& player){
 
     bool loopHold = true;
     string carType;
@@ -54,7 +54,8 @@ int Reservation::createReservation(People& player){
 
                 //Checks if the the seat input is correct, if not it outputs an error
                 if (carType == "back" or carType == "frontSide" or carType == "rightBack" or carType == "leftBack") {
-                    if (findNearestSeat(carType) == true) {
+                    //if (findNearestSeat(carType) == true) {
+                    if (4 == 4) {
                         cout << "Seat successfully reserved" << endl;
 
                         //Assigns reservation number
@@ -62,7 +63,8 @@ int Reservation::createReservation(People& player){
 
                         loopHold = false;
                         break;
-                    } else {
+                    }
+                    else {
                         cout << "Seat not availible" << endl;
                     }
                 }
@@ -83,11 +85,16 @@ int Reservation::createReservation(People& player){
 
 }
 
-void modifyReservation(int reservationNumber){
-
+void Reservation::deleteReservation(People& player){
+  cout << "del" << endl;
 }
 
-void deleteReservation(int reservationNumber);
+void Reservation::modifyReservation(People& player){
+player.deleteReservation(player);
+player.createReservation(player);
+}
 
-void printReservation(int);
 
+void Reservation::printReservation(People& player){
+  cout << "print";
+}

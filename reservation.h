@@ -10,9 +10,11 @@
 #include <vector>
 class People;
 class Reservation {
-protected:
-    int createReservation(People& player);
-
 public:
+    void createReservation(People& player);
+    void deleteReservation(People& player);
+    void modifyReservation(People& player);
+    void printReservation(People& player);
+
     int reservationNumber;
 };

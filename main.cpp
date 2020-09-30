@@ -8,6 +8,7 @@
 
 #include "people.h"
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <fstream>
 #include <vector>
@@ -16,32 +17,36 @@ using namespace std;
 
 int main() {
 
-    ofstream inputFile;
+    ifstream inputFile;
     vector<string> driverNames;
     vector<string> playerNames;
     vector<int> playerCredits;
+    char userInput;
 
 //Opening the list of team members
     inputFile.open("quidditch_team.dat");
 
+    if (!inputFile.is_open()) {
+      cout << "Could not open file numFile.txt." << endl;
+      return 1; // 1 indicates error
+   }
+
 //Inputting all of the drivers into a vector
     for (int i = 0; i < 6; i++) {
         string temp;
-        getline(cin, temp);
+        getline(inputFile, temp);
         driverNames.push_back(temp);
     }
 
 //Inputting all of the players and their credits into vectors
     for (int i = 0; i < 18; i++) {
-        string temp;
-        char temp2;
+        string name, first, last;
+        int credit;
 
-        getline(cin, temp);
-        temp.back() = temp2;
-        temp.pop_back();
-        temp.pop_back();
-        playerNames.push_back(temp);
-        playerCredits.push_back(temp2);
+        inputFile >> first >> last >> credit;
+        name = first + " " + last;
+        playerNames.push_back(name);
+        playerCredits.push_back(credit);
     }
 
     inputFile.close();
@@ -58,4 +63,31 @@ int main() {
     for(int i = 0; i < passengers.size(); i++){
         passengers.at(i).assignPassenger(playerNames.at(i), playerCredits.at(i));
     }
+
+    cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify reservation, and 'd' to delete" << endl;
+    cin >> userInput;
+
+    while (userInput != 'q') {
+      if (userInput == 'c') {
+        cout << "Enter Player to Create" << endl;
+        drivers.at(1).createReservation(drivers.at(1));
+        cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify reservation, and 'd' to delete" << endl;
+      }
+      else if (userInput == 'm') {
+        cout << "m" << endl;
+        drivers.at(1).modifyReservation(drivers.at(1));
+        cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify reservation, and 'd' to delete" << endl;
+      }
+      else if (userInput == 'd') {
+        cout << "d" << endl;
+        drivers.at(1).deleteReservation(drivers.at(1));
+        cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify reservation, and 'd' to delete" << endl;
+      }
+      else {
+        cout << "Not a valid option, please try again." << endl;
+        cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify reservation, and 'd' to delete" << endl;
+      }
+      cin >> userInput;
+    }
+  return 0;
 }
