@@ -74,12 +74,12 @@ int main() {
         cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify reservation, and 'd' to delete" << endl;
       }
       else if (userInput == 'm') {
-        cout << "m" << endl;
+        cout << "Enter Player to Modify" << endl;
         drivers.at(1).modifyReservation(drivers.at(1));
         cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify reservation, and 'd' to delete" << endl;
       }
       else if (userInput == 'd') {
-        cout << "d" << endl;
+        cout << "Enter Player to Delete" << endl;
         drivers.at(1).deleteReservation(drivers.at(1));
         cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify reservation, and 'd' to delete" << endl;
       }

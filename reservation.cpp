@@ -22,10 +22,10 @@ void Reservation::createReservation(People& player){
     if(player.credits < 0) {
         cout << "Not enough credits remaining" << endl;
     }else {
-        cout << player.name << "has " << player.credits << "remaining" << endl;
+        cout << endl << player.name << " has " << player.credits << " credits remaining" << endl;
 
         //The visual interface for selecting a seat
-        cout << "Truck" << "      " << "Compact" << "       " << "Sedan" << "       " << endl;
+        cout << endl<< "Truck" << "      " << "Compact" << "       " << "Sedan" << "       " << endl;
         cout << "Purple" << "      " << "Red" << "          " << "Blue" << "         " << endl;
 
         cout << endl << endl << endl << endl;
@@ -56,7 +56,7 @@ void Reservation::createReservation(People& player){
                 if (carType == "back" || carType == "frontSide" || carType == "rightBack" || carType == "leftBack") {
                     //if (findNearestSeat(carType) == true) {
                     if (4 == 4) {
-                        cout << "Seat successfully reserved" << endl;
+                        cout << "Seat successfully reserved!" << endl;
 
                         //Assigns reservation number
                         //reservationNumber.at(currentReservation) = currentReservation;
@@ -86,7 +86,7 @@ void Reservation::createReservation(People& player){
 }
 
 void Reservation::deleteReservation(People& player){
-  cout << "del" << endl;
+  cout << "Reservation successfully deleted!" << endl;
 }
 
 void Reservation::modifyReservation(People& player){
