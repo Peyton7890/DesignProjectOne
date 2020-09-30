@@ -91,6 +91,7 @@ void Reservation::deleteReservation(People& player){
 
 void Reservation::modifyReservation(People& player){
 player.deleteReservation(player);
+//Give back credits
 player.createReservation(player);
 }
 
