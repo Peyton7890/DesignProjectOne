@@ -22,10 +22,10 @@ void Reservation::createReservation(People& player){
     if(player.credits < 0) {
         cout << "Not enough credits remaining" << endl;
     }else {
-        cout << player.name << "has " << player.credits << "remaining";
+        cout << player.name << "has " << player.credits << "remaining" << endl;
 
         //The visual interface for selecting a seat
-        cout << "Truck" << "        " << "Compact" << "       " << "Sedan" << "       " << endl;
+        cout << "Truck" << "      " << "Compact" << "       " << "Sedan" << "       " << endl;
         cout << "Purple" << "      " << "Red" << "          " << "Blue" << "         " << endl;
 
         cout << endl << endl << endl << endl;
@@ -34,7 +34,7 @@ void Reservation::createReservation(People& player){
 
         cout << endl << endl << endl << endl;
 
-        cout << "            " << "Yellow" << "     " << endl;
+        cout << "            " << "Yellow" << "     " << endl << endl;
 
         cout << "You have two options to reserve a seat" << endl;
         cout << "Type a specific seat type to find the type of seat in any car" << endl;
@@ -53,7 +53,7 @@ void Reservation::createReservation(People& player){
                 cin >> carType;
 
                 //Checks if the the seat input is correct, if not it outputs an error
-                if (carType == "back" or carType == "frontSide" or carType == "rightBack" or carType == "leftBack") {
+                if (carType == "back" || carType == "frontSide" || carType == "rightBack" || carType == "leftBack") {
                     //if (findNearestSeat(carType) == true) {
                     if (4 == 4) {
                         cout << "Seat successfully reserved" << endl;

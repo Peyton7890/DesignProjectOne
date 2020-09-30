@@ -27,7 +27,7 @@ int main() {
     inputFile.open("quidditch_team.dat");
 
     if (!inputFile.is_open()) {
-      cout << "Could not open file numFile.txt." << endl;
+      cout << "Could not open file quidditch_team.dat." << endl;
       return 1; // 1 indicates error
    }
 
