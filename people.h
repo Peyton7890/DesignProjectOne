@@ -25,6 +25,7 @@ public:
     void printPassenger();
 
     friend class Reservation;
+    friend class Vehicles;
 
     void assignDriver(string driverName); //Int 1 = pickup, int 2 = compact, int 3 = sedan
     void printDriver();

@@ -9,16 +9,18 @@
 #include <string>
 #include <vector>
 #include "reservation.h"
+#include "people.h"
 
 using namespace std;
 
+class People;
 class Vehicles : public Reservation{
 private:
     string vehicleColor;
     int availableSeats;
     vector<bool> seatOccupancy = vector<bool> (18);
 
-    int frontSeatVal = 1;
+    int frontSeatVal = 5;
     int backSeatVal = 3;
     int sideBackSeatBal = 2;
     int middleBackSeatVal = 1;
@@ -28,5 +30,6 @@ public:
     void displayVehicle();
     bool findSeat(string seatType);
     void setDriverVehicle(string driverName, int carType);
+    void setPassengerReservation(People& player, string carType, string carColor, int seatNumber);
 
 };

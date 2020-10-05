@@ -10,6 +10,7 @@
 #include <string>
 #include <locale>
 #include "people.h"
+#include "vehicles.h"
 
 //Creates a reservation
 void Reservation::createReservation(People& player){
@@ -18,6 +19,7 @@ void Reservation::createReservation(People& player){
     string carType;
     string carColor = "none";
     int seatNumber = 0;
+    Vehicles vehicle;
 
     //Checks if the user has enough credits to make a reservation
     if(player.credits <= 0) {
@@ -81,7 +83,7 @@ void Reservation::createReservation(People& player){
             cin >> carColor;
             cin >> seatNumber;
 
-            //Write specifying a specific seat
+            vehicle.setPassengerReservation(player, carType, carColor, seatNumber);
 
         }
         //If neither 1 or 2 is inputted, it will output an error
