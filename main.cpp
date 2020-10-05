@@ -7,6 +7,7 @@
 /**********************************************************/
 
 #include "people.h"
+#include "vehicles.h"
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -22,6 +23,9 @@ int main() {
     vector<string> playerNames;
     vector<int> playerCredits;
     char userInput;
+    string tempName;
+    int playerNumber;
+    bool validName = false;
 
 //Opening the list of team members
     inputFile.open("quidditch_team.dat");
@@ -64,22 +68,36 @@ int main() {
       passengers.at(i).assignPassenger(playerNames.at(i), playerCredits.at(i));
     }
 
+    setVehicle(drivers.at(1), 1);
+
+    while (validName == false) {
+
+        cout << "Enter Player to Create Reservation" << endl;
+        getline(cin, tempName);
+
+        for (int i = 0; i < playerNames.size(); i++) {
+            if (playerNames.at(i) == tempName) {
+                cout << "Valid User" << endl;
+                playerNumber = i;
+                validName = true;
+                break;
+            }
+        }
+    }
+
     cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify";
     cout << " reservation, and 'd' to delete" << endl;
     cin >> userInput;
 
     while (userInput != 'q') {
       if (userInput == 'c') {
-        cout << "Enter Player to Create" << endl;
-        drivers.at(1).createReservation(drivers.at(1));
+        drivers.at(playerNumber).createReservation(drivers.at(playerNumber));
       }
       else if (userInput == 'm') {
-        cout << "Enter Player to Modify" << endl;
-        drivers.at(1).modifyReservation(drivers.at(1));
+        drivers.at(playerNumber).modifyReservation(drivers.at(playerNumber);
       }
       else if (userInput == 'd') {
-        cout << "Enter Player to Delete" << endl;
-        drivers.at(1).deleteReservation(drivers.at(1));
+        drivers.at(playerNumber).deleteReservation(drivers.at(playerNumber));
       }
       else {
         cout << "Not a valid option, please try again." << endl;

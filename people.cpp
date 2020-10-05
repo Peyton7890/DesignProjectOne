@@ -6,6 +6,7 @@
 /*** Description: people class                          ***/
 /**********************************************************/
 #include "people.h"
+
 using namespace std;
 
  void People::assignPassenger(string passName, int currCredits){
