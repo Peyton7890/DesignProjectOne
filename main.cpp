@@ -9,7 +9,6 @@
 #include "people.h"
 #include "vehicles.h"
 #include <iostream>
-#include <iomanip>
 #include <string>
 #include <fstream>
 #include <vector>
@@ -70,7 +69,7 @@ int main() {
 
     //Sets all drivers into their respective seats
     for(int i = 0; i < 5; i++) {
-        drivers.at(i).setDriverVehicle(drivers.at(i), i);
+       // drivers.at(i).setDriverVehicle(drivers.at(i), i);
     }
 
     //Checks if the user inputted passenger is valid in the database
@@ -100,13 +99,13 @@ int main() {
     //Checks for user input and calls the corresponding function
     while (userInput != 'q') {
         if (userInput == 'c') {
-            drivers.at(playerNumber).createReservation(drivers.at(playerNumber));
+            passengers.at(playerNumber).createReservation(passengers.at(playerNumber));
         }
         else if (userInput == 'm') {
-            drivers.at(playerNumber).modifyReservation(drivers.at(playerNumber));
+            passengers.at(playerNumber).modifyReservation(passengers.at(playerNumber));
         }
         else if (userInput == 'd') {
-            drivers.at(playerNumber).deleteReservation(drivers.at(playerNumber));
+            passengers.at(playerNumber).deleteReservation(passengers.at(playerNumber));
         }
         else {
             cout << "Not a valid option, please try again." << endl;
