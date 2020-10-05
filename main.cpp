@@ -68,7 +68,14 @@ int main() {
       passengers.at(i).assignPassenger(playerNames.at(i), playerCredits.at(i));
     }
 
-    setVehicle(drivers.at(1), 1);
+    cout << endl << endl << playerCredits.at(12) << endl << endl;
+
+
+    //Sets all drivers into their respective seats
+    for(int i = 0; i < 5; i++){
+    drivers.at(i).setDriverVehicle(drivers.at(i), i);
+    }
+
 
     while (validName == false) {
 
@@ -83,6 +90,9 @@ int main() {
                 break;
             }
         }
+        if (validName == false) {
+          cout << "Invalid Player Name" << endl;
+        }
     }
 
     cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify";
@@ -94,7 +104,7 @@ int main() {
         drivers.at(playerNumber).createReservation(drivers.at(playerNumber));
       }
       else if (userInput == 'm') {
-        drivers.at(playerNumber).modifyReservation(drivers.at(playerNumber);
+        drivers.at(playerNumber).modifyReservation(drivers.at(playerNumber));
       }
       else if (userInput == 'd') {
         drivers.at(playerNumber).deleteReservation(drivers.at(playerNumber));

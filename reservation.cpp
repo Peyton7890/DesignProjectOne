@@ -19,7 +19,7 @@ void Reservation::createReservation(People& player){
     int seatNumber = 0;
 
     //Checks if the user has enough credits to make a reservation
-    if(player.credits < 0) {
+    if(player.credits <= 0) {
         cout << "Not enough credits remaining" << endl;
     }else {
         cout << endl << player.name << " has " << player.credits << " credits remaining" << endl;
@@ -81,17 +81,20 @@ void Reservation::createReservation(People& player){
             //Write specifying a specific seat
 
         }
+        else{
+            cout << "Invalid Selection" << endl;
+        }
     }
 
 }
 
 void Reservation::deleteReservation(People& player){
   cout << "Reservation successfully deleted!" << endl;
+  //Give back credits
 }
 
 void Reservation::modifyReservation(People& player){
 player.deleteReservation(player);
-//Give back credits
 player.createReservation(player);
 }
 

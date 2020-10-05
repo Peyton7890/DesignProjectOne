@@ -6,6 +6,8 @@
 /*** Description: header file for vehicles class        ***/
 /**********************************************************/
 #include <iostream>
+#include <string>
+#include <vector>
 #include "reservation.h"
 
 using namespace std;
@@ -25,6 +27,6 @@ private:
 public:
     void displayVehicle();
     bool findSeat(string seatType);
-    void setVehicle(string driverName, int carType);
-    
+    void setDriverVehicle(string driverName, int carType);
+
 };

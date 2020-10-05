@@ -5,6 +5,9 @@
 /*** Date : 09/21/2020                                  ***/
 /*** Description: header file for reservation class     ***/
 /**********************************************************/
+#ifndef RESERVATIONH
+#define RESERVATIONH
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -18,3 +21,5 @@ public:
 
     int reservationNumber;
 };
+
+#endif
