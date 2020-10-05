@@ -31,26 +31,26 @@ int main() {
     inputFile.open("quidditch_team.dat");
 
     if (!inputFile.is_open()) {
-      cout << "Could not open file quidditch_team.dat." << endl;
-      return 1; // 1 indicates error
+        cout << "Could not open file quidditch_team.dat." << endl;
+        return 1; // 1 indicates error
    }
 
 //Inputting all of the drivers into a vector
     for (int i = 0; i < 6; i++) {
-      string temp;
-      getline(inputFile, temp);
-      driverNames.push_back(temp);
+        string temp;
+        getline(inputFile, temp);
+        driverNames.push_back(temp);
     }
 
 //Inputting all of the players and their credits into vectors
     for (int i = 0; i < 18; i++) {
-      string name, first, last;
-      int credit;
+        string name, first, last;
+        int credit;
 
-      inputFile >> first >> last >> credit;
-      name = first + " " + last;
-      playerNames.push_back(name);
-      playerCredits.push_back(credit);
+        inputFile >> first >> last >> credit;
+        name = first + " " + last;
+        playerNames.push_back(name);
+        playerCredits.push_back(credit);
     }
 
     inputFile.close();
@@ -59,24 +59,24 @@ int main() {
     vector<People> passengers(18);
 
     //Sets all drivers as part of the people class
-    for(int i = 0; i < drivers.size(); i++){
-      drivers.at(i).assignDriver(driverNames.at(i));
+    for(int i = 0; i < drivers.size(); i++) {
+        drivers.at(i).assignDriver(driverNames.at(i));
     }
 
     //Sets all passengers as part of the people class
-    for(int i = 0; i < passengers.size(); i++){
-      passengers.at(i).assignPassenger(playerNames.at(i), playerCredits.at(i));
+    for(int i = 0; i < passengers.size(); i++) {
+        passengers.at(i).assignPassenger(playerNames.at(i), playerCredits.at(i));
     }
 
     cout << endl << endl << playerCredits.at(12) << endl << endl;
 
 
     //Sets all drivers into their respective seats
-    for(int i = 0; i < 5; i++){
-    drivers.at(i).setDriverVehicle(drivers.at(i), i);
+    for(int i = 0; i < 5; i++) {
+        drivers.at(i).setDriverVehicle(drivers.at(i), i);
     }
 
-
+    //Checks if the user inputted passenger is valid in the database
     while (validName == false) {
 
         cout << "Enter Player to Create Reservation" << endl;
@@ -95,26 +95,28 @@ int main() {
         }
     }
 
+    //Face of interface, prompts user what type of function they want to use
     cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify";
     cout << " reservation, and 'd' to delete" << endl;
     cin >> userInput;
 
+    //Checks for user input and calls the corresponding function
     while (userInput != 'q') {
-      if (userInput == 'c') {
-        drivers.at(playerNumber).createReservation(drivers.at(playerNumber));
-      }
-      else if (userInput == 'm') {
-        drivers.at(playerNumber).modifyReservation(drivers.at(playerNumber));
-      }
-      else if (userInput == 'd') {
-        drivers.at(playerNumber).deleteReservation(drivers.at(playerNumber));
-      }
-      else {
-        cout << "Not a valid option, please try again." << endl;
-      }
-      cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify";
-      cout << " reservation, and 'd' to delete" << endl;
-      cin >> userInput;
+        if (userInput == 'c') {
+            drivers.at(playerNumber).createReservation(drivers.at(playerNumber));
+        }
+        else if (userInput == 'm') {
+            drivers.at(playerNumber).modifyReservation(drivers.at(playerNumber));
+        }
+        else if (userInput == 'd') {
+            drivers.at(playerNumber).deleteReservation(drivers.at(playerNumber));
+        }
+        else {
+            cout << "Not a valid option, please try again." << endl;
+        }
+        cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify";
+        cout << " reservation, and 'd' to delete" << endl;
+        cin >> userInput;
     }
   return 0;
 }

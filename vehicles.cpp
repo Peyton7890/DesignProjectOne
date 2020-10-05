@@ -16,7 +16,6 @@ vector<string> sedanBlue(5);
 vector<string> sedanGreen(5);
 
 //Sets the driver into their seat in each vehicle
-
 void Vehicles::setDriverVehicle(string driverName, int carType) {
     if(carType == 1){
         pickupPurple.at(1) = driverName;
