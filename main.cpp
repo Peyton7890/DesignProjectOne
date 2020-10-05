@@ -68,9 +68,6 @@ int main() {
         passengers.at(i).assignPassenger(playerNames.at(i), playerCredits.at(i));
     }
 
-    cout << endl << endl << playerCredits.at(12) << endl << endl;
-
-
     //Sets all drivers into their respective seats
     for(int i = 0; i < 5; i++) {
         drivers.at(i).setDriverVehicle(drivers.at(i), i);
