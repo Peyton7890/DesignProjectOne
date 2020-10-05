@@ -74,8 +74,8 @@ void Reservation::createReservation(People& player){
             }
 
             //If the user inputs 2, the second type of selection is chosen, the user will input a specific seat
-        }else
-            if(seatSelection == 2) {
+        }
+        else if(seatSelection == 2) {
 
             cin >> carType;
             cin >> carColor;
