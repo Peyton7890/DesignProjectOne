@@ -62,7 +62,7 @@ int main() {
     //Sets all drivers as part of the people class
     for(int i = 0; i < drivers.size(); i++) {
         drivers.at(i).assignDriver(driverNames.at(i));
-        vehicleDrivers.at(i) = drivers.at(i).assignDriver(driverNames.at(i));
+    //    vehicleDrivers.at(i) = drivers.at(i).assignDriver(driverNames.at(i));
     }
 
     //Sets all passengers as part of the people class
@@ -72,7 +72,7 @@ int main() {
 
     //Sets all drivers into their respective seats
     for(int i = 0; i < 5; i++) {
-       vehicleDrivers.at(i).setDriverVehicle(vehicleDrivers.at(i), i);
+    //   vehicleDrivers.at(i).setDriverVehicle(vehicleDrivers.at(i), i);
     }
 
 
