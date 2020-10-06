@@ -48,19 +48,19 @@ void Vehicles::setPassengerReservation(People& player, int seatNumber) {
         seatOccupancy.at(seatNumber) = true;
 
         if ((seatNumber == 0) || (seatNumber == 1) || (seatNumber == 4) ||
-          (seatNumber == 8) || (seatNumber == 11) || (seatNumber == 15)) {
-              player.credits = player.credits - frontSeatVal;
+            (seatNumber == 8) || (seatNumber == 11) || (seatNumber == 15)) {
+            player.credits = player.credits - frontSeatVal;
         }
         else if ((seatNumber == 2) || (seatNumber == 3) || (seatNumber == 9) ||
-          (seatNumber == 10) || (seatNumber == 16) || (seatNumber == 17)) {
-              player.credits = player.credits - backSeatVal;
+            (seatNumber == 10) || (seatNumber == 16) || (seatNumber == 17)) {
+            player.credits = player.credits - backSeatVal;
         }
         else if ((seatNumber == 5) || (seatNumber == 7) || (seatNumber == 12) ||
-          (seatNumber == 14)) {
-              player.credits = player.credits - sideBackSeatVal;
+            (seatNumber == 14)) {
+            player.credits = player.credits - sideBackSeatVal;
         }
         else if ((seatNumber == 6) || (seatNumber == 13)) {
-              player.credits = player.credits - middleBackSeatVal;
+            player.credits = player.credits - middleBackSeatVal;
         }
 
         cout << player.name << " has reserved seat number " << seatNumber
@@ -68,90 +68,118 @@ void Vehicles::setPassengerReservation(People& player, int seatNumber) {
 
     }
     else {
-      cout << "Seat not available" << endl;
+        cout << "Seat not available" << endl;
     }
 }
 
 void Vehicles::setPassengerBySeat(People& player, string carType) {
 
         if ((carType == "front") && ((seatOccupancy.at(0) == false) || (seatOccupancy.at(1) == false) || (seatOccupancy.at(4) == false) ||
-          (seatOccupancy.at(8) == false) || (seatOccupancy.at(11) == false) || (seatOccupancy.at(15) == false))) {
+            (seatOccupancy.at(8) == false) || (seatOccupancy.at(11) == false) || (seatOccupancy.at(15) == false))) {
             if (seatOccupancy.at(0) == false) {
-              seatNumber = 0;
+                seatNumber = 0;
+                seatOccupancy.at(seatNumber) = true;
             }
             else if (seatOccupancy.at(1) == false) {
-              seatNumber = 1;
+                seatNumber = 1;
+                seatOccupancy.at(seatNumber) = true;
             }
             else if (seatOccupancy.at(4) == false) {
-              seatNumber = 4;
+                seatNumber = 4;
+                seatOccupancy.at(seatNumber) = true;
             }
             else if (seatOccupancy.at(8) == false) {
-              seatNumber = 8;
+                seatNumber = 8;
+                seatOccupancy.at(seatNumber) = true;
             }
             else if (seatOccupancy.at(11) == false) {
-              seatNumber = 11;
+                seatNumber = 11;
+                seatOccupancy.at(seatNumber) = true;
             }
             else if (seatOccupancy.at(15) == false) {
-              seatNumber = 15;
+                seatNumber = 15;
+                seatOccupancy.at(seatNumber) = true;
             }
-              player.credits = player.credits - frontSeatVal;
-              cout << player.name << " has reserved seat number " << seatNumber
+                player.credits = player.credits - frontSeatVal;
+                cout << player.name << " has reserved seat number " << seatNumber
                 << " and now has " << player.credits << " credits." << endl << endl;
         }
-        else if ((carType == "back") && ((seatOccupancy.at(2) == false) || (seatOccupancy.at(3) == false) || (seatOccupancy.at(9) == false) ||
-          (seatOccupancy.at(10) == false) || (seatOccupancy.at(16) == false) || (seatOccupancy.at(17) == false))) {
+        else if ((carType == "back") &&
+        ((seatOccupancy.at(2) == false) ||
+        (seatOccupancy.at(3) == false) ||
+        (seatOccupancy.at(9) == false) ||
+        (seatOccupancy.at(10) == false) ||
+        (seatOccupancy.at(16) == false) ||
+        (seatOccupancy.at(17) == false))) {
             if (seatOccupancy.at(2) == false) {
-              seatNumber = 2;
+                seatNumber = 2;
+                seatOccupancy.at(seatNumber) = true;
             }
             else if (seatOccupancy.at(3) == false) {
-              seatNumber = 3;
+                seatNumber = 3;
+                seatOccupancy.at(seatNumber) = true;
             }
             else if (seatOccupancy.at(9) == false) {
-              seatNumber = 9;
+                seatNumber = 9;
+                seatOccupancy.at(seatNumber) = true;
             }
             else if (seatOccupancy.at(10) == false) {
-              seatNumber = 10;
+                seatNumber = 10;
+                seatOccupancy.at(seatNumber) = true;
             }
             else if (seatOccupancy.at(16) == false) {
-              seatNumber = 16;
+                seatNumber = 16;
+                seatOccupancy.at(seatNumber) = true;
             }
             else if (seatOccupancy.at(17) == false) {
-              seatNumber = 17;
+                seatNumber = 17;
+                seatOccupancy.at(seatNumber) = true;
             }
-              player.credits = player.credits - backSeatVal;
-              cout << player.name << " has reserved seat number " << seatNumber
-                << " and now has " << player.credits << " credits." << endl << endl;
+
+            player.credits = player.credits - backSeatVal;
+            cout << player.name << " has reserved seat number " << seatNumber
+            << " and now has " << player.credits << " credits." << endl << endl;
         }
-        else if ((carType == "sideBack") && ((seatOccupancy.at(5) == false) || (seatOccupancy.at(7) == false) || (seatOccupancy.at(12) == false) ||
-          (seatOccupancy.at(14) == false))) {
+        else if ((carType == "sideBack") &&
+        ((seatOccupancy.at(5) == false) ||
+        (seatOccupancy.at(7) == false) ||
+        (seatOccupancy.at(12) == false) ||
+        (seatOccupancy.at(14) == false))) {
             if (seatOccupancy.at(5) == false) {
-              seatNumber = 5;
+                seatNumber = 5;
+                seatOccupancy.at(seatNumber) = true;
             }
             else if (seatOccupancy.at(7) == false) {
-              seatNumber = 7;
+                seatNumber = 7;
+                seatOccupancy.at(seatNumber) = true;
             }
             else if (seatOccupancy.at(12) == false) {
-              seatNumber = 12;
+                seatNumber = 12;
+                seatOccupancy.at(seatNumber) = true;
             }
             else if (seatOccupancy.at(14) == false) {
-              seatNumber = 14;
+                seatNumber = 14;
+                seatOccupancy.at(seatNumber) = true;
             }
-              player.credits = player.credits - sideBackSeatVal;
-              cout << player.name << " has reserved seat number " << seatNumber
-                << " and now has " << player.credits << " credits." << endl << endl;
+          player.credits = player.credits - sideBackSeatVal;
+          cout << player.name << " has reserved seat number " << seatNumber
+            << " and now has " << player.credits << " credits." << endl << endl;
         }
-        else if ((carType == "middleBack") && ((seatOccupancy.at(6) == false) || (seatOccupancy.at(13) == false))) {
+        else if ((carType == "middleBack") &&
+        ((seatOccupancy.at(6) == false) ||
+        (seatOccupancy.at(13) == false))) {
             if (seatOccupancy.at(6) == false) {
                 seatNumber = 6;
+                seatOccupancy.at(seatNumber) = true;
             }
             else if (seatOccupancy.at(13) == false) {
                 seatNumber = 13;
+                seatOccupancy.at(seatNumber) = true;
             }
             player.credits = player.credits - middleBackSeatVal;
             cout << player.name << " has reserved seat number " << seatNumber
               << " and now has " << player.credits << " credits." << endl << endl;
         }
-
         else {
       cout << "Seat not available" << endl;
     }
@@ -229,22 +257,22 @@ void Vehicles::displayVehicle(){
 
     cout << "     " "(-)   ";
 
-    if(seatOccupancy.at(2) == false){
-        cout << "(2)" << endl;
+    if(seatOccupancy.at(4) == false){
+        cout << "(4)" << endl;
     }else{
         cout << "(x)" << endl;
     }
 
     cout << "           ";
 
-    if(seatOccupancy.at(3) == false) {
-        cout << "(3) ";
+    if(seatOccupancy.at(2) == false) {
+        cout << "(2) ";
     }else{
         cout << "(x) ";
     }
 
-    if(seatOccupancy.at(4) == false) {
-        cout << "(4)";
+    if(seatOccupancy.at(3) == false) {
+        cout << "(3)";
     }else{
         cout << "(x)";
     }
@@ -272,7 +300,7 @@ void Vehicles::displayVehicle(){
     cout << "            " << "Blue";
     cout << "        " << "Green" << "       " << endl;
 
-    cout << "           (-)  ";
+    cout << "           (-) ";
 
     if(seatOccupancy.at(8) == false) {
         cout << "(8)";
@@ -280,7 +308,15 @@ void Vehicles::displayVehicle(){
         cout << "(x) ";
     }
 
-    cout << "     (-)      ";
+    cout << "     (-)     ";
+
+    if(seatOccupancy.at(11) == false) {
+        cout << "(11)";
+    }else{
+        cout << "(x)";
+    }
+
+    cout << endl << "           ";
 
     if(seatOccupancy.at(9) == false) {
         cout << "(9)";
@@ -288,16 +324,8 @@ void Vehicles::displayVehicle(){
         cout << "(x)";
     }
 
-    cout << endl << "           ";
-
     if(seatOccupancy.at(10) == false) {
         cout << "(10)";
-    }else{
-        cout << "(x)";
-    }
-
-    if(seatOccupancy.at(11) == false) {
-        cout << "(11)";
     }else{
         cout << "(x)";
     }
@@ -346,12 +374,7 @@ void Vehicles::displayVehicle(){
         cout << "(x)";
     }
 
-
-
-
-
     cout << endl << endl;
-
     cout << "You have two options to reserve a seat:" << endl << endl;
     cout << "Option 1:" << endl;
     cout << "Type the location of the seat you want in any car" << endl;
