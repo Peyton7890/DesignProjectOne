@@ -156,6 +156,52 @@ void Vehicles::setPassengerBySeat(People& player, string carType) {
       cout << "Seat not available" << endl;
     }
 }
+void Vehicles::deletePassengerReservation(People& player) {
+
+    for (int i = 0; i < 18; ++i) {
+        if (seatName.at(i) == player.name) {
+            seatName.at(i).clear();
+            seatOccupancy.at(i) = false;
+            seatNumber = i;
+        }
+    }
+    if ((seatNumber == 0) || (seatNumber == 1) || (seatNumber == 4) ||
+      (seatNumber == 8) || (seatNumber == 11) || (seatNumber == 15)) {
+          player.credits = player.credits + frontSeatVal;
+    }
+    else if ((seatNumber == 2) || (seatNumber == 3) || (seatNumber == 9) ||
+      (seatNumber == 10) || (seatNumber == 16) || (seatNumber == 17)) {
+          player.credits = player.credits + backSeatVal;
+    }
+    else if ((seatNumber == 5) || (seatNumber == 7) || (seatNumber == 12) ||
+      (seatNumber == 14)) {
+          player.credits = player.credits + sideBackSeatVal;
+    }
+    else if ((seatNumber == 6) || (seatNumber == 13)) {
+          player.credits = player.credits + middleBackSeatVal;
+    }
+
+
+    cout << player.name << " is no longer seated " << seatNumber
+      << " and has " << player.credits << " credits." << endl << endl;
+}
+
+void Vehicles::printPassengerReservation(People& player){
+    int tmp = 20;
+    for (int i = 0; i < 18; ++i) {
+        if (seatName.at(i) == player.name) {
+            tmp = i;
+          }
+        }
+    if (tmp == 20) {
+        cout << player.name << " has not reserved a seat and has "
+          << player.credits << " credits." << endl;
+    }
+    else {
+      cout << player.name << " has reserved seat #" << tmp
+        << " and has " << player.credits << " credits." << endl;
+    }
+}
 
 void Vehicles::displayVehicle(){
     //The visual interface for selecting a seat

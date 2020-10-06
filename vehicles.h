@@ -18,7 +18,6 @@ class Vehicles : public Reservation{
 private:
     string vehicleColor;
     int availableSeats;
-    //vector<bool> seatOccupancy = vector<bool> (18);
 
     int frontSeatVal = 5;
     int backSeatVal = 3;
@@ -32,5 +31,7 @@ public:
     void setDriverVehicle(string driverName, int carType);
     void setPassengerReservation(People& player, int seatNumber);
     void setPassengerBySeat(People& player, string carType);
+    void deletePassengerReservation(People& player);
+    void printPassengerReservation(People& player);
 
 };

@@ -65,14 +65,20 @@ void Reservation::createReservation(People& player){
 
 //Allows the user to delete a reservation
 void Reservation::deleteReservation(People& player){
-    cout << "Reservation successfully deleted!" << endl;
-    //Give back credits
+    Vehicles vehicle;
+    vehicle.deletePassengerReservation(player);
 }
 
 //Allows the user to modify a reservation
 void Reservation::modifyReservation(People& player){
     player.deleteReservation(player);
     player.createReservation(player);
+}
+
+//Allows the user to print a Passenger
+void Reservation::printPassenger(People& player){
+    Vehicles vehicle;
+    vehicle.printPassengerReservation(player);
 }
 
 //Allows the user to print a reservation

@@ -99,7 +99,7 @@ int main() {
 
         //Face of interface, prompts user what type of function they want to use
         cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify";
-        cout << " reservation, and 'd' to delete" << endl;
+        cout << ", 'd' to delete and 'p' to print" << endl;
         cin >> userInput;
 
         //Checks for user input and calls the corresponding function
@@ -113,11 +113,14 @@ int main() {
             else if (userInput == 'd') {
                 passengers.at(playerNumber).deleteReservation(passengers.at(playerNumber));
             }
+            else if (userInput == 'p') {
+                passengers.at(playerNumber).Reservation::printPassenger(passengers.at(playerNumber));
+            }
             else {
                 cout << "Not a valid option, please try again." << endl;
             }
             cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify";
-            cout << " reservation, and 'd' to delete" << endl;
+            cout << ", 'd' to delete and 'p' to print" << endl;
             cin >> userInput;
       }
 
