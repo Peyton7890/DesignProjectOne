@@ -31,5 +31,6 @@ public:
     bool findSeat(string seatType);
     void setDriverVehicle(string driverName, int carType);
     void setPassengerReservation(People& player, int seatNumber);
+    void setPassengerBySeat(People& player, string carType);
 
 };

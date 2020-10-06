@@ -15,9 +15,7 @@
 //Creates a reservation
 void Reservation::createReservation(People& player){
 
-    bool loopHold = true;
     string carType;
-    string carColor;
     int seatNumber = 0;
     Vehicles vehicle;
 
@@ -43,7 +41,7 @@ void Reservation::createReservation(People& player){
         cout << "You have two options to reserve a seat:" << endl << endl;
         cout << "Option 1:" << endl;
         cout << "Type the location of the seat you want in any car" << endl;
-        cout << "AVAILIBLE INPUTS: front, back, rightBack, leftBack, middleBack" << endl << endl;
+        cout << "AVAILIBLE INPUTS: front, back, sideBack, middleBack" << endl << endl;
         cout << "Option 2:" << endl;
         cout << "Input the desired seat number" << endl << endl;
         cout << "Type '1' for the first method, type '2' for the second" << endl;
@@ -55,29 +53,20 @@ void Reservation::createReservation(People& player){
         //If the user inputs 1, Quick selection is selected
         //the user may now input one of many seat types to find a seat
         if(seatSelection == 1) {
-            while (loopHold == true) {
 
-                cin >> carType;
-
+            cin >> carType;
                 //Checks if the the seat input is correct, if not it outputs an error
-                if (carType == "back" || carType == "frontSide" || carType == "rightBack" || carType == "leftBack") {
-                    //if (findNearestSeat(carType) == true) {
-                    if (4 == 4) {
-                        cout << "Seat successfully reserved!" << endl;
+            if (carType == "front" || carType == "back" || carType == "sideBack" || carType == "middleBack") {
 
-                        //Assigns reservation number
-                        //reservationNumber.at(currentReservation) = currentReservation;
-                        loopHold = false;
-                        break;
-                    }
-                    else {
-                        cout << "Seat not availible" << endl;
-                    }
-                }
+                cout << "Option one called" << endl << endl << endl;
+                vehicle.setPassengerBySeat(player, carType);
+            }
+            else {
+                cout << "Invalid car type" << endl;
             }
 
             //If the user inputs 2, the second type of selection is chosen, the user will input a specific seat
-            
+
         }
         else if(seatSelection == 2) {
 
