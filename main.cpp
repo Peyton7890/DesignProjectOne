@@ -128,6 +128,7 @@ int main() {
       cout << "Enter 'YES' to continue, and enter anything else to quit." << endl;
 
       cin >> continueProgram;
+      cin.ignore();
       validName = false;
 
   }
