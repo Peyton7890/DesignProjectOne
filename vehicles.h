@@ -22,7 +22,7 @@ private:
 
     int frontSeatVal = 5;
     int backSeatVal = 3;
-    int sideBackSeatBal = 2;
+    int sideBackSeatVal = 2;
     int middleBackSeatVal = 1;
 
 
@@ -30,6 +30,6 @@ public:
     void displayVehicle();
     bool findSeat(string seatType);
     void setDriverVehicle(string driverName, int carType);
-    void setPassengerReservation(People& player, string carType, string carColor, int seatNumber);
+    void setPassengerReservation(People& player, int seatNumber);
 
 };

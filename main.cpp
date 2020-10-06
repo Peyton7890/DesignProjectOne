@@ -22,6 +22,7 @@ int main() {
     vector<string> playerNames;
     vector<int> playerCredits;
     char userInput;
+    string continueProgram = "YES";
     string tempName;
     int playerNumber;
     bool validName = false;
@@ -72,47 +73,58 @@ int main() {
        // drivers.at(i).setDriverVehicle(drivers.at(i), i);
     }
 
-    //Checks if the user inputted passenger is valid in the database
-    while (validName == false) {
 
-        cout << "Enter Player to Create Reservation" << endl;
-        getline(cin, tempName);
+    while (continueProgram == "YES") {
+        //Checks if the user inputted passenger is valid in the database
+        while (validName == false) {
 
-        for (int i = 0; i < playerNames.size(); i++) {
-            if (playerNames.at(i) == tempName) {
-                cout << "Valid User" << endl;
-                playerNumber = i;
-                validName = true;
-                break;
+            cout << "Enter Player to Create Reservation" << endl;
+            getline(cin, tempName);
+
+            for (int i = 0; i < playerNames.size(); i++) {
+                if (playerNames.at(i) == tempName) {
+                    cout << "Valid User" << endl;
+                    playerNumber = i;
+                    validName = true;
+                    break;
+                  }
+            }
+            if (validName == false) {
+                cout << "Invalid Player Name" << endl;
             }
         }
-        if (validName == false) {
-          cout << "Invalid Player Name" << endl;
-        }
-    }
+        tempName.clear();
 
-    //Face of interface, prompts user what type of function they want to use
-    cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify";
-    cout << " reservation, and 'd' to delete" << endl;
-    cin >> userInput;
-
-    //Checks for user input and calls the corresponding function
-    while (userInput != 'q') {
-        if (userInput == 'c') {
-            passengers.at(playerNumber).createReservation(passengers.at(playerNumber));
-        }
-        else if (userInput == 'm') {
-            passengers.at(playerNumber).modifyReservation(passengers.at(playerNumber));
-        }
-        else if (userInput == 'd') {
-            passengers.at(playerNumber).deleteReservation(passengers.at(playerNumber));
-        }
-        else {
-            cout << "Not a valid option, please try again." << endl;
-        }
+        //Face of interface, prompts user what type of function they want to use
         cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify";
         cout << " reservation, and 'd' to delete" << endl;
         cin >> userInput;
-    }
+
+        //Checks for user input and calls the corresponding function
+        while (userInput != 'q') {
+            if (userInput == 'c') {
+                passengers.at(playerNumber).createReservation(passengers.at(playerNumber));
+            }
+            else if (userInput == 'm') {
+                passengers.at(playerNumber).modifyReservation(passengers.at(playerNumber));
+            }
+            else if (userInput == 'd') {
+                passengers.at(playerNumber).deleteReservation(passengers.at(playerNumber));
+            }
+            else {
+                cout << "Not a valid option, please try again." << endl;
+            }
+            cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify";
+            cout << " reservation, and 'd' to delete" << endl;
+            cin >> userInput;
+      }
+
+      cout << "Would you like to continue with a different player?" << endl;
+      cout << "Enter 'YES' to continue, and enter anything else to quit." << endl;
+
+      cin >> continueProgram;
+      validName = false;
+
+  }
   return 0;
 }

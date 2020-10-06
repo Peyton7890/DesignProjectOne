@@ -8,83 +8,65 @@
 
 #include "vehicles.h"
 
-vector<string> pickupPurple(2);
-vector<string> compactRed(4);
-vector<string> compactBlue(4);
-vector<string> compactYellow(4);
-vector<string> sedanBlue(5);
-vector<string> sedanGreen(5);
+string pickupPurple;
+string compactRed;
+string compactBlue;
+string compactYellow;
+string sedanBlue;
+string sedanGreen;
 
+vector<string> seatName(18);
 vector<bool> seatOccupancy(18);
 
 //Sets the driver into their seat in each vehicle
 void Vehicles::setDriverVehicle(string driverName, int carType) {
     if(carType == 1){
-        pickupPurple.at(0) = driverName;
-        seatOccupancy.at(0) = true;
+        pickupPurple = driverName;
     }
-    if(carType == 2){
-        compactRed.at(0) = driverName;
-        seatOccupancy.at(0) = true;
+    else if(carType == 2){
+        compactRed = driverName;
     }
-    if(carType == 3){
-        compactBlue.at(0) = driverName;
-        seatOccupancy.at(0) = true;
+    else if(carType == 3){
+        compactBlue = driverName;
     }
-    if(carType == 4){
-        compactYellow.at(0) = driverName;
-        seatOccupancy.at(0) = true;
+    else if(carType == 4){
+        compactYellow = driverName;
     }
-    if(carType == 5){
-        sedanBlue.at(1) = driverName;
-        seatOccupancy.at(1) = true;
+    else if(carType == 5){
+        sedanBlue = driverName;
     }
-    if(carType == 6){
-        sedanGreen.at(1) = driverName;
-        seatOccupancy.at(1) = true;
+    else if(carType == 6){
+        sedanGreen = driverName;
     }
 }
 
-void Vehicles::setPassengerReservation(People& player, string carType, string carColor, int seatNumber) {
-    //Lowercase all the strings
-    if ((carType == "pickup") && (carColor == "purple")) {
-        if ((seatOccupancy.at(seatNumber) == false) && (seatNumber < 2 && seatNumber > 0)) {
-            pickupPurple.at(seatNumber) = player.name;
-            seatOccupancy.at(seatNumber) = true;
-            player.credits = player.credits - frontSeatVal;
-            cout << player.name << " has reserved seat number " << seatNumber
-              << " and now has " << player.credits << " credits." << endl << endl;
+void Vehicles::setPassengerReservation(People& player, int seatNumber) {
 
+    if ((seatOccupancy.at(seatNumber) == false) && (seatNumber < 18)) {
+        seatName.at(seatNumber) = player.name;
+        seatOccupancy.at(seatNumber) = true;
+
+        if ((seatNumber == 0) || (seatNumber == 1) || (seatNumber == 4) ||
+          (seatNumber == 8) || (seatNumber == 11) || (seatNumber == 15)) {
+              player.credits = player.credits - frontSeatVal;
         }
-        else {
-          cout << "Seat not available" << endl;
+        else if ((seatNumber == 2) || (seatNumber == 3) || (seatNumber == 9) ||
+          (seatNumber == 10) || (seatNumber == 16) || (seatNumber == 17)) {
+              player.credits = player.credits - backSeatVal;
         }
+        else if ((seatNumber == 5) || (seatNumber == 7) || (seatNumber == 12) ||
+          (seatNumber == 14)) {
+              player.credits = player.credits - sideBackSeatVal;
+        }
+        else if ((seatNumber == 6) || (seatNumber == 13)) {
+              player.credits = player.credits - middleBackSeatVal;
+        }
+
+        cout << player.name << " has reserved seat number " << seatNumber
+          << " and now has " << player.credits << " credits." << endl << endl;
+
     }
-    else if ((carType == "compact") && (carColor == "red")) {
-        if ((seatOccupancy.at(seatNumber) == false) && (seatNumber < 6 && seatNumber > 2)) {
-            compactRed.at(seatNumber) = player.name;
-            seatOccupancy.at(seatNumber) = true;
-            player.credits = player.credits - frontSeatVal;
-            cout << player.name << " has reserved seat number " << seatNumber
-              << " and now has " << player.credits << " credits." << endl << endl;
-
-        }
-        else {
-          cout << "Seat not available" << endl;
-        }
+    else {
+      cout << "Seat not available" << endl;
     }
-    else if ((carType == "pickup") && (carColor == "purple")) {
-        if ((seatOccupancy.at(seatNumber) == false) && (seatNumber < 2 && seatNumber > 0)) {
-            pickupPurple.at(seatNumber) = player.name;
-            seatOccupancy.at(seatNumber) = true;
-            player.credits = player.credits - frontSeatVal;
-            cout << player.name << " has reserved seat number " << seatNumber
-              << " and now has " << player.credits << " credits." << endl << endl;
-
-        }
-        else {
-          cout << "Seat not available" << endl;
-        }
-    }
-
 }

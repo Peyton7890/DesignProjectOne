@@ -17,7 +17,7 @@ void Reservation::createReservation(People& player){
 
     bool loopHold = true;
     string carType;
-    string carColor = "none";
+    string carColor;
     int seatNumber = 0;
     Vehicles vehicle;
 
@@ -40,12 +40,13 @@ void Reservation::createReservation(People& player){
 
         cout << "            " << "Yellow" << "     " << endl << endl;
 
-        cout << "You have two options to reserve a seat" << endl;
-        cout << "Type a specific seat type to find the type of seat in any car" << endl;
-        cout << "AVAILIBLE INPUTS: front, back, rightBack, leftBack" << endl;
-        cout << "Or you can input, the car type, the car color, and the seat number" << endl;
-        cout << "Example: sedan yellow 2" << endl;
-        cout << "Type 1 for the first method, type 2 for the second" << endl;
+        cout << "You have two options to reserve a seat:" << endl << endl;
+        cout << "Option 1:" << endl;
+        cout << "Type the location of the seat you want in any car" << endl;
+        cout << "AVAILIBLE INPUTS: front, back, rightBack, leftBack, middleBack" << endl << endl;
+        cout << "Option 2:" << endl;
+        cout << "Input the desired seat number" << endl << endl;
+        cout << "Type '1' for the first method, type '2' for the second" << endl;
 
         int seatSelection = 0;
 
@@ -79,11 +80,9 @@ void Reservation::createReservation(People& player){
         }
         else if(seatSelection == 2) {
 
-            cin >> carType;
-            cin >> carColor;
             cin >> seatNumber;
 
-            vehicle.setPassengerReservation(player, carType, carColor, seatNumber);
+            vehicle.setPassengerReservation(player, seatNumber);
 
         }
         //If neither 1 or 2 is inputted, it will output an error
