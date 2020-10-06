@@ -26,25 +26,7 @@ void Reservation::createReservation(People& player){
     else{
         cout << endl << player.name << " has " << player.credits << " credits remaining" << endl;
 
-        //The visual interface for selecting a seat
-        cout << endl<< "Truck" << "      " << "Compact" << "       " << "Sedan" << "       " << endl;
-        cout << "Purple" << "      " << "Red" << "          " << "Blue" << "         " << endl;
-
-        cout << endl << endl << endl << endl;
-
-        cout << "            " << "Blue" << "        " << "Green" << "       " << endl;
-
-        cout << endl << endl << endl << endl;
-
-        cout << "            " << "Yellow" << "     " << endl << endl;
-
-        cout << "You have two options to reserve a seat:" << endl << endl;
-        cout << "Option 1:" << endl;
-        cout << "Type the location of the seat you want in any car" << endl;
-        cout << "AVAILIBLE INPUTS: front, back, sideBack, middleBack" << endl << endl;
-        cout << "Option 2:" << endl;
-        cout << "Input the desired seat number" << endl << endl;
-        cout << "Type '1' for the first method, type '2' for the second" << endl;
+        vehicle.displayVehicle();
 
         int seatSelection = 0;
 

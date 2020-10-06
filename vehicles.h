@@ -18,7 +18,7 @@ class Vehicles : public Reservation{
 private:
     string vehicleColor;
     int availableSeats;
-    vector<bool> seatOccupancy = vector<bool> (18);
+    //vector<bool> seatOccupancy = vector<bool> (18);
 
     int frontSeatVal = 5;
     int backSeatVal = 3;

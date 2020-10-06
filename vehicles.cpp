@@ -157,4 +157,160 @@ void Vehicles::setPassengerBySeat(People& player, string carType) {
     }
 }
 
-//PUT DISPLAY VEHICLE HERE
+void Vehicles::displayVehicle(){
+    //The visual interface for selecting a seat
+
+    cout << endl<< "Truck" << "      " << "Compact";
+    cout << "       " << "Sedan" << "       " << endl;
+    cout << "Purple" << "      " << "Red";
+    cout << "          " << "Blue" << "         " << endl;
+
+    cout << "(-)";
+
+    if(seatOccupancy.at(0) == false) {
+        cout << "(0)";
+    }else{
+        cout << "(x)";
+    }
+
+    cout << "     " << "(-) ";
+
+    if(seatOccupancy.at(1) == false) {
+        cout << "(1) ";
+    }else{
+        cout << "(x) ";
+    }
+
+    cout << "     " "(-)   ";
+
+    if(seatOccupancy.at(2) == false){
+        cout << "(2)" << endl;
+    }else{
+        cout << "(x)" << endl;
+    }
+
+    cout << "           ";
+
+    if(seatOccupancy.at(3) == false) {
+        cout << "(3) ";
+    }else{
+        cout << "(x) ";
+    }
+
+    if(seatOccupancy.at(4) == false) {
+        cout << "(4)";
+    }else{
+        cout << "(x)";
+    }
+
+   cout << "      ";
+
+    if(seatOccupancy.at(5) == false) {
+        cout << "(5)";
+    }else{
+        cout << "(x)";
+    }
+
+    if(seatOccupancy.at(6) == false) {
+        cout << "(6)";
+    }else{
+        cout << "(x)";
+    }
+
+    if(seatOccupancy.at(7) == false) {
+        cout << "(7)" << endl << endl;
+    }else{
+        cout << "(x)" << endl << endl;
+    }
+
+    cout << "            " << "Blue";
+    cout << "        " << "Green" << "       " << endl;
+
+    cout << "           (-)  ";
+
+    if(seatOccupancy.at(8) == false) {
+        cout << "(8)";
+    }else{
+        cout << "(x) ";
+    }
+
+    cout << "     (-)      ";
+
+    if(seatOccupancy.at(9) == false) {
+        cout << "(9)";
+    }else{
+        cout << "(x)";
+    }
+
+    cout << endl << "           ";
+
+    if(seatOccupancy.at(10) == false) {
+        cout << "(10)";
+    }else{
+        cout << "(x)";
+    }
+
+    if(seatOccupancy.at(11) == false) {
+        cout << "(11)";
+    }else{
+        cout << "(x)";
+    }
+
+    cout << "     ";
+
+    if(seatOccupancy.at(12) == false){
+        cout << "(12)";
+    }else{
+        cout << "(x)";
+    }
+
+    if(seatOccupancy.at(13) == false) {
+        cout << "(13)";
+    }else{
+        cout << "(x)";
+    }
+
+    if(seatOccupancy.at(14) == false) {
+        cout << "(14)" << endl << endl;
+    }else{
+        cout << "(x)" << endl << endl;
+    }
+
+    cout << "            " << "Yellow" << "     ";
+    cout << endl << "           ";
+    cout << "(-) ";
+
+    if(seatOccupancy.at(15) == false) {
+        cout << "(15)";
+    }else{
+        cout << "(x)";
+    }
+
+    cout << endl << "           ";
+
+    if(seatOccupancy.at(16) == false) {
+        cout << "(16)";
+    }else{
+        cout << "(x)";
+    }
+
+    if(seatOccupancy.at(17) == false) {
+        cout << "(17)";
+    }else{
+        cout << "(x)";
+    }
+
+
+
+
+
+    cout << endl << endl;
+
+    cout << "You have two options to reserve a seat:" << endl << endl;
+    cout << "Option 1:" << endl;
+    cout << "Type the location of the seat you want in any car" << endl;
+    cout << "AVAILIBLE INPUTS: front, back, sideBack, middleBack" << endl << endl;
+    cout << "Option 2:" << endl;
+    cout << "Input the desired seat number" << endl << endl;
+    cout << "Type '1' for the first method, type '2' for the second" << endl;
+}
