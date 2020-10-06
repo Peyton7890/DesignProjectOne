@@ -156,3 +156,5 @@ void Vehicles::setPassengerBySeat(People& player, string carType) {
       cout << "Seat not available" << endl;
     }
 }
+
+//PUT DISPLAY VEHICLE HERE
