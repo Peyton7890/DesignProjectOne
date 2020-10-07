@@ -16,8 +16,6 @@ using namespace std;
 class People;
 class Vehicles : public Reservation{
 private:
-    string vehicleColor;
-    int availableSeats;
 
     int frontSeatVal = 5;
     int backSeatVal = 3;
@@ -27,11 +25,16 @@ private:
 
 public:
     void displayVehicle();
-    bool findSeat(string seatType);
-    void setDriverVehicle(string driverName, int carType);
     void setPassengerReservation(People& player, int seatNumber);
     void setPassengerBySeat(People& player, string carType);
     void deletePassengerReservation(People& player);
     void printPassengerReservation(People& player);
+
+    void printTruckPurple();
+    void printCompactRed();
+    void printCompactBlue();
+    void printCompactYellow();
+    void printSedanBlue();
+    void printSedanGreen();
 
 };

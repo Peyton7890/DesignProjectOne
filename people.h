@@ -18,7 +18,6 @@ class People : public Reservation{
 protected:
     int credits;
     string name;
-    string vehicleType;
 
 public:
     void assignPassenger(string passName, int currCredits);
@@ -28,7 +27,6 @@ public:
     friend class Vehicles;
 
     void assignDriver(string driverName); //Int 1 = pickup, int 2 = compact, int 3 = sedan
-    void printDriver();
 };
 
 #endif

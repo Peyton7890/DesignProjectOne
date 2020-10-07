@@ -60,19 +60,19 @@ int main() {
     vector<Vehicles> vehicleDrivers(6);
 
     //Sets all drivers as part of the people class
-    for(int i = 0; i < drivers.size(); i++) {
-        drivers.at(i).assignDriver(driverNames.at(i));
-    //    vehicleDrivers.at(i) = drivers.at(i).assignDriver(driverNames.at(i));
+    for (int i = 0; i < drivers.size(); i++) {
+        drivers.at(i).assignDriver
+        (driverNames.at(i));
     }
 
     //Sets all passengers as part of the people class
-    for(int i = 0; i < passengers.size(); i++) {
-        passengers.at(i).assignPassenger(playerNames.at(i), playerCredits.at(i));
+    for (int i = 0; i < passengers.size(); i++) {
+        passengers.at(i).assignPassenger
+        (playerNames.at(i), playerCredits.at(i));
     }
 
     //Sets all drivers into their respective seats
-    for(int i = 0; i < 5; i++) {
-    //   vehicleDrivers.at(i).setDriverVehicle(vehicleDrivers.at(i), i);
+    for (int i = 0; i < 5; i++) {
     }
 
 
@@ -86,7 +86,12 @@ int main() {
             for (int i = 0; i < playerNames.size(); i++) {
                 if (playerNames.at(i) == tempName) {
                     cout << "Valid User" << endl;
-                    playerNumber = i;
+                    playerNumber = i;/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
+Name:
+Input:
+Output:
+Purpose:
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
                     validName = true;
                     break;
                   }
@@ -97,7 +102,8 @@ int main() {
         }
         tempName.clear();
 
-        //Face of interface, prompts user what type of function they want to use
+        //Face of interface, prompts user
+        //what type of function they want to use
         cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify";
         cout << ", 'd' to delete and 'p' to print" << endl;
         cin >> userInput;
@@ -105,16 +111,20 @@ int main() {
         //Checks for user input and calls the corresponding function
         while (userInput != 'q') {
             if (userInput == 'c') {
-                passengers.at(playerNumber).createReservation(passengers.at(playerNumber));
+                passengers.at(playerNumber).createReservation
+                (passengers.at(playerNumber));
             }
             else if (userInput == 'm') {
-                passengers.at(playerNumber).modifyReservation(passengers.at(playerNumber));
+                passengers.at(playerNumber).modifyReservation
+                (passengers.at(playerNumber));
             }
             else if (userInput == 'd') {
-                passengers.at(playerNumber).deleteReservation(passengers.at(playerNumber));
+                passengers.at(playerNumber).deleteReservation
+                (passengers.at(playerNumber));
             }
             else if (userInput == 'p') {
-                passengers.at(playerNumber).Reservation::printPassenger(passengers.at(playerNumber));
+                passengers.at(playerNumber).Reservation::printPassenger
+                (passengers.at(playerNumber));
             }
             else {
                 cout << "Not a valid option, please try again." << endl;
