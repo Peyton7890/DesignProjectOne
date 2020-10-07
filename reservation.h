@@ -18,7 +18,7 @@ public:
     void deleteReservation(People& player);
     void modifyReservation(People& player);
     void printPassenger(People& player);
-    void printReservation(People& player);
+    void printReservation();
 };
 
 #endif

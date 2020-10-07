@@ -29,6 +29,7 @@ public:
     void setPassengerBySeat(People& player, string carType);
     void deletePassengerReservation(People& player);
     void printPassengerReservation(People& player);
+    void resPrint();
 
     void printTruckPurple();
     void printCompactRed();
