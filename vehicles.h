@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 #include "reservation.h"
 #include "people.h"
 
@@ -29,6 +30,7 @@ public:
     void setPassengerBySeat(People& player, string carType);
     void deletePassengerReservation(People& player);
     void printPassengerReservation(People& player);
+    void printPassengerReservationToTxt(People& player);
     void resPrint();
 
     void printTruckPurple();

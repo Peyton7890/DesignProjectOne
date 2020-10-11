@@ -18,12 +18,14 @@ using namespace std;
 int main() {
 
     ifstream inputFile;
+    ofstream outputFile;
     vector<string> driverNames;
     vector<string> playerNames;
     vector<int> playerCredits;
     char userInput;
     string continueProgram = "YES";
     string tempName;
+    string tmp;
     int playerNumber;
     bool validName = false;
 
@@ -33,7 +35,7 @@ int main() {
     if (!inputFile.is_open()) {
         cout << "Could not open file quidditch_team.dat." << endl;
         return 1; // 1 indicates error
-   }
+    }
 
 //Inputting all of the drivers into a vector
     for (int i = 0; i < 6; i++) {
@@ -71,10 +73,6 @@ int main() {
         (playerNames.at(i), playerCredits.at(i));
     }
 
-    //Sets all drivers into their respective seats
-    for (int i = 0; i < 5; i++) {
-    }
-
 
     while (continueProgram == "YES") {
         //Checks if the user inputted passenger is valid in the database
@@ -86,12 +84,7 @@ int main() {
             for (int i = 0; i < playerNames.size(); i++) {
                 if (playerNames.at(i) == tempName) {
                     cout << "Valid User" << endl;
-                    playerNumber = i;/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
-Name:
-Input:
-Output:
-Purpose:
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+                    playerNumber = i;
                     validName = true;
                     break;
                   }
@@ -102,8 +95,7 @@ Purpose:
         }
         tempName.clear();
 
-        //Face of interface, prompts user
-        //what type of function they want to use
+        //Prompts user to enter what type of function they want to use
         cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify";
         cout << ", 'd' to delete and 'p' to print" << endl;
         cin >> userInput;
@@ -140,6 +132,42 @@ Purpose:
       cin >> continueProgram;
       cin.ignore();
       validName = false;
+
+  }
+
+  //Prompts user to enter if they want to print reservation data
+  cout << "If you would like to print all the reservation data,"
+    << " enter 'YES', if not enter anything else" << endl;
+
+  //Checks for user input and calls the corresponding function
+  cin >> tmp;
+  if (tmp == "YES") {
+      string adminPass;
+      Vehicles vehicle;
+      cout << "Enter the administrator password to view the reservations."
+        << endl;
+      cin >> adminPass;
+
+      if (adminPass == "Password1") {
+          vehicle.resPrint();
+
+          outputFile.open("all_reservations.txt");
+          if (!outputFile.is_open()) {
+              cout << "Could not open file all_reservations.txt." << endl;
+              return 1; // 1 indicates error
+          }
+
+          outputFile << "List of Passengers and their seating:" << endl << endl;
+
+          outputFile.close();
+
+          for (int i = 0; i < 18; ++i) {
+              vehicle.printPassengerReservationToTxt(passengers.at(i));
+          }
+      }
+      else {
+        cout << "Incorrect Password";
+      }
 
   }
   return 0;

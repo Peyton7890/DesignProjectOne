@@ -269,167 +269,213 @@ void Vehicles::printPassengerReservation(People& player) {
         << " and has " << player.credits << " credits." << endl;
     }
 }
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
+Name: printPassengerReservationToTxt()
+Input: (1) People object
+Output: (0)
+Purpose: prints the passenger reservation
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+void Vehicles::printPassengerReservationToTxt(People& player) {
+    int tmp = 20;
+    ofstream outputFile;
+
+    outputFile.open("all_reservations.txt");
+    if (!outputFile.is_open()) {
+        cout << "Could not open file all_reservations.txt." << endl;
+        return; //indicates error
+    }
+
+    for (int i = 0; i < 18; ++i) {
+        if (seatName.at(i) == player.name) {
+            tmp = i;
+          }
+        }
+    if (tmp == 20) {
+        outputFile << player.name << " has not reserved a seat and has "
+          << player.credits << " credits." << endl;
+    }
+    else {
+      outputFile << player.name << " has reserved seat #" << tmp
+        << " and has " << player.credits << " credits." << endl;
+    }
+
+    outputFile.close();
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
+Name: resPrint()
+Input: (0)
+Output: (0)
+Purpose: prints data to a txt file
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 void Vehicles::resPrint() {
     Vehicles vehicle;
-    cout << endl << "Truck" << "      " << "Compact";
-    cout << "       " << "Sedan" << "       " << endl;
-    cout << "Purple" << "      " << "Red";
-    cout << "          " << "Blue" << "         " << endl;
-    cout << "(-)";
+    ofstream outputFile;
+
+    outputFile.open("all_reservations.txt");
+    if (!outputFile.is_open()) {
+        cout << "Could not open file all_reservations.txt." << endl;
+        return; //indicates error
+    }
+
+    outputFile << endl << "Truck" << "      " << "Compact";
+    outputFile << "       " << "Sedan" << "       " << endl;
+    outputFile << "Purple" << "      " << "Red";
+    outputFile << "          " << "Blue" << "         " << endl;
+    outputFile << "(-)";
 
     if (seatOccupancy.at(0) == false) {
-        cout << "(0)";
+        outputFile << "(0)";
     }
     else{
-        cout << "(x)";
+        outputFile << "(x)";
     }
 
-    cout << "     " << "(-) ";
+    outputFile << "     " << "(-) ";
 
     if (seatOccupancy.at(1) == false) {
-        cout << "(1) ";
+        outputFile << "(1) ";
     }else{
-        cout << "(x) ";
+        outputFile << "(x) ";
     }
 
-    cout << "     " "(-)   ";
+    outputFile << "     " "(-)   ";
 
     if (seatOccupancy.at(4) == false){
-        cout << "(4)" << endl;
+        outputFile << "(4)" << endl;
     }
     else{
-        cout << "(x)" << endl;
+        outputFile << "(x)" << endl;
     }
 
-    cout << "           ";
+    outputFile << "           ";
 
     if (seatOccupancy.at(2) == false) {
-        cout << "(2) ";
+        outputFile << "(2) ";
     }
     else{
-        cout << "(x) ";
+        outputFile << "(x) ";
     }
 
     if (seatOccupancy.at(3) == false) {
-        cout << "(3)";
+        outputFile << "(3)";
     }
     else{
-        cout << "(x)";
+        outputFile << "(x)";
     }
 
-    cout << "      ";
+    outputFile << "      ";
 
     if (seatOccupancy.at(5) == false) {
-        cout << "(5)";
+        outputFile << "(5)";
     }
     else{
-        cout << "(x)";
+        outputFile << "(x)";
     }
 
     if (seatOccupancy.at(6) == false) {
-        cout << "(6)";
+        outputFile << "(6)";
     }
     else{
-        cout << "(x)";
+        outputFile << "(x)";
     }
 
     if (seatOccupancy.at(7) == false) {
-        cout << "(7)" << endl << endl;
+        outputFile << "(7)" << endl << endl;
     }
     else{
-        cout << "(x)" << endl << endl;
+        outputFile << "(x)" << endl << endl;
     }
 
-    cout << "            " << "Blue";
-    cout << "        " << "Green" << "       " << endl;
+    outputFile << "            " << "Blue";
+    outputFile << "        " << "Green" << "       " << endl;
 
-    cout << "           (-) ";
+    outputFile << "           (-) ";
 
     if (seatOccupancy.at(8) == false) {
-        cout << "(8)";
+        outputFile << "(8)";
     }
     else{
-        cout << "(x) ";
+        outputFile << "(x) ";
     }
 
-    cout << "     (-)     ";
+    outputFile << "     (-)     ";
 
     if (seatOccupancy.at(11) == false) {
-        cout << "(11)";
+        outputFile << "(11)";
     }
     else{
-        cout << "(x)";
+        outputFile << "(x)";
     }
 
-    cout << endl << "           ";
+    outputFile << endl << "           ";
 
     if (seatOccupancy.at(9) == false) {
-        cout << "(9)";
+        outputFile << "(9)";
     }
     else{
-        cout << "(x)";
+        outputFile << "(x)";
     }
 
     if (seatOccupancy.at(10) == false) {
-        cout << "(10)";
+        outputFile << "(10)";
     }
     else{
-        cout << "(x)";
+        outputFile << "(x)";
     }
 
-    cout << "     ";
+    outputFile << "     ";
 
     if (seatOccupancy.at(12) == false){
-        cout << "(12)";
+        outputFile << "(12)";
     }
     else {
-        cout << "(x)";
+        outputFile << "(x)";
     }
 
     if (seatOccupancy.at(13) == false) {
-        cout << "(13)";
+        outputFile << "(13)";
     }
     else {
-        cout << "(x)";
+        outputFile << "(x)";
     }
 
     if (seatOccupancy.at(14) == false) {
-        cout << "(14)" << endl << endl;
+        outputFile << "(14)" << endl << endl;
     }
     else {
-        cout << "(x)" << endl << endl;
+        outputFile << "(x)" << endl << endl;
     }
 
-    cout << "            " << "Yellow" << "     ";
-    cout << endl << "           ";
-    cout << "(-) ";
+    outputFile << "            " << "Yellow" << "     ";
+    outputFile << endl << "           ";
+    outputFile << "(-) ";
 
     if (seatOccupancy.at(15) == false) {
-        cout << "(15)";
+        outputFile << "(15)";
     }
     else{
-        cout << "(x)";
+        outputFile << "(x)";
     }
 
-    cout << endl << "           ";
+    outputFile << endl << "           ";
 
     if (seatOccupancy.at(16) == false) {
-        cout << "(16)";
+        outputFile << "(16)";
     }
     else{
-        cout << "(x)";
+        outputFile << "(x)";
     }
 
     if (seatOccupancy.at(17) == false) {
-        cout << "(17)";
+        outputFile << "(17)" << endl << endl;
     }
     else {
-        cout << "(x)" << endl << endl;
+        outputFile << "(x)" << endl << endl;
     }
-    cout << "List of Passengers and their seating" << endl;
-    for (int i = 0; i < 18; ++i) {
-        vehicle.printPassengerReservation(player.at(i));
-    }
+
+    outputFile.close();
 
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++//

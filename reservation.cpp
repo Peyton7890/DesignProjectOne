@@ -96,23 +96,3 @@ void Reservation::printPassenger(People& player) {
     Vehicles vehicle;
     vehicle.printPassengerReservation(player);
 }
-
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
-Name: printReservation()
-Input: (1) People object
-Output: (0)
-Purpose: print the reservation number and position of a player
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-void Reservation::printReservation() {
-    string adminPass;
-    Vehicles vehicle;
-    cout << "Enter the administrator password to view the reservations.";
-    cin >> adminPass;
-
-    if (adminPass == "Password1") {
-        vehicle.resPrint();
-    }
-    else {
-        cout << "Incorrect Password";
-    }
-}
