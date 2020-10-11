@@ -1,1 +1,34 @@
+
+Truck      Compact       Sedan       
+Purple      Red          Blue         
+(-)(0)     (-) (1)      (-)   (4)
+           (2) (3)      (5)(6)(7)
+
+            Blue        Green       
+           (-) (8)     (-)     (11)
+           (9)(10)     (12)(13)(14)
+
+            Yellow     
+           (-) (15)
+           (16)(17)
+
+List of Passengers and their seating:
+
+Pam Allen has not reserved a seat and has 4 credits.
+Tony James has not reserved a seat and has 4 credits.
+Ron Jonesn has not reserved a seat and has 9 credits.
+Will Rogers has not reserved a seat and has 1 credits.
+Don Williams has not reserved a seat and has 3 credits.
+Doug Long has not reserved a seat and has 2 credits.
+Randy Carter has not reserved a seat and has 6 credits.
+Adam Jenkins has not reserved a seat and has 8 credits.
+Dan Scott has not reserved a seat and has 1 credits.
+Ed Patterson has not reserved a seat and has 7 credits.
+Sarah Ward has not reserved a seat and has 0 credits.
+Jeff Howard has not reserved a seat and has 4 credits.
+Amy Bryant has not reserved a seat and has 8 credits.
+Carl Gray has not reserved a seat and has 1 credits.
+Sam Miller has not reserved a seat and has 5 credits.
+Rob Bell has not reserved a seat and has 2 credits.
+Mary Baker has not reserved a seat and has 5 credits.
 Peter Torres has not reserved a seat and has 6 credits.

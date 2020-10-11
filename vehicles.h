@@ -30,8 +30,8 @@ public:
     void setPassengerBySeat(People& player, string carType);
     void deletePassengerReservation(People& player);
     void printPassengerReservation(People& player);
-    void printPassengerReservationToTxt(People& player);
-    void resPrint();
+    void printPassengerReservationToTxt(People& player, ofstream &outputFile);
+    void resPrint(ofstream &outputFile);
 
     void printTruckPurple();
     void printCompactRed();

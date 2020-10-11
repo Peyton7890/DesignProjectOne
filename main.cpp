@@ -149,7 +149,6 @@ int main() {
       cin >> adminPass;
 
       if (adminPass == "Password1") {
-          vehicle.resPrint();
 
           outputFile.open("all_reservations.txt");
           if (!outputFile.is_open()) {
@@ -157,13 +156,14 @@ int main() {
               return 1; // 1 indicates error
           }
 
+          vehicle.resPrint(outputFile);
+
           outputFile << "List of Passengers and their seating:" << endl << endl;
 
-          outputFile.close();
-
           for (int i = 0; i < 18; ++i) {
-              vehicle.printPassengerReservationToTxt(passengers.at(i));
+              vehicle.printPassengerReservationToTxt(passengers.at(i), outputFile);
           }
+          outputFile.close();
       }
       else {
         cout << "Incorrect Password";

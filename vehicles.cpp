@@ -276,15 +276,8 @@ Input: (1) People object
 Output: (0)
 Purpose: prints the passenger reservation
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-void Vehicles::printPassengerReservationToTxt(People& player) {
+void Vehicles::printPassengerReservationToTxt(People& player, ofstream &outputFile) {
     int tmp = 20;
-    ofstream outputFile;
-
-    outputFile.open("all_reservations.txt");
-    if (!outputFile.is_open()) {
-        cout << "Could not open file all_reservations.txt." << endl;
-        return; //indicates error
-    }
 
     for (int i = 0; i < 18; ++i) {
         if (seatName.at(i) == player.name) {
@@ -300,7 +293,6 @@ void Vehicles::printPassengerReservationToTxt(People& player) {
         << " and has " << player.credits << " credits." << endl;
     }
 
-    outputFile.close();
 }
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
@@ -309,15 +301,8 @@ Input: (0)
 Output: (0)
 Purpose: prints data to a txt file
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-void Vehicles::resPrint() {
+void Vehicles::resPrint(ofstream &outputFile) {
     Vehicles vehicle;
-    ofstream outputFile;
-
-    outputFile.open("all_reservations.txt");
-    if (!outputFile.is_open()) {
-        cout << "Could not open file all_reservations.txt." << endl;
-        return; //indicates error
-    }
 
     outputFile << endl << "Truck" << "      " << "Compact";
     outputFile << "       " << "Sedan" << "       " << endl;
@@ -475,7 +460,6 @@ void Vehicles::resPrint() {
         outputFile << "(x)" << endl << endl;
     }
 
-    outputFile.close();
 
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
