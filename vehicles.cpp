@@ -59,7 +59,8 @@ void Vehicles::setPassengerReservation(People& player, int seatNumber) {
             seatOccupancy.at(seatNumber) = true;
             player.credits = player.credits - middleBackSeatVal;
             cout << player.name << " has reserved seat number " << seatNumber
-                << " and now has " << player.credits << " credits." << endl << endl;
+                << " and now has " << player.credits << " credits." << endl
+                << endl;
         }
 
     else {
@@ -277,7 +278,8 @@ Input: (1) People object
 Output: (0)
 Purpose: prints the passenger reservation
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-void Vehicles::printPassengerReservationToTxt(People& player, ofstream &outputFile) {
+void Vehicles::printPassengerReservationToTxt
+    (People& player, ofstream &outputFile) {
     int tmp = 20;
 
     for (int i = 0; i < 18; ++i) {
@@ -314,7 +316,7 @@ void Vehicles::resPrint(ofstream &outputFile) {
     if (seatOccupancy.at(0) == false) {
         outputFile << "(0)";
     }
-    else{
+    else {
         outputFile << "(x)";
     }
 
@@ -322,7 +324,8 @@ void Vehicles::resPrint(ofstream &outputFile) {
 
     if (seatOccupancy.at(1) == false) {
         outputFile << "(1) ";
-    }else{
+    }
+    else {
         outputFile << "(x) ";
     }
 
@@ -331,7 +334,7 @@ void Vehicles::resPrint(ofstream &outputFile) {
     if (seatOccupancy.at(4) == false){
         outputFile << "(4)" << endl;
     }
-    else{
+    else {
         outputFile << "(x)" << endl;
     }
 
@@ -340,14 +343,14 @@ void Vehicles::resPrint(ofstream &outputFile) {
     if (seatOccupancy.at(2) == false) {
         outputFile << "(2) ";
     }
-    else{
+    else {
         outputFile << "(x) ";
     }
 
     if (seatOccupancy.at(3) == false) {
         outputFile << "(3)";
     }
-    else{
+    else {
         outputFile << "(x)";
     }
 
@@ -356,21 +359,21 @@ void Vehicles::resPrint(ofstream &outputFile) {
     if (seatOccupancy.at(5) == false) {
         outputFile << "(5)";
     }
-    else{
+    else {
         outputFile << "(x)";
     }
 
     if (seatOccupancy.at(6) == false) {
         outputFile << "(6)";
     }
-    else{
+    else {
         outputFile << "(x)";
     }
 
     if (seatOccupancy.at(7) == false) {
         outputFile << "(7)" << endl << endl;
     }
-    else{
+    else {
         outputFile << "(x)" << endl << endl;
     }
 
@@ -382,7 +385,7 @@ void Vehicles::resPrint(ofstream &outputFile) {
     if (seatOccupancy.at(8) == false) {
         outputFile << "(8)";
     }
-    else{
+    else {
         outputFile << "(x) ";
     }
 
@@ -391,7 +394,7 @@ void Vehicles::resPrint(ofstream &outputFile) {
     if (seatOccupancy.at(11) == false) {
         outputFile << "(11)";
     }
-    else{
+    else {
         outputFile << "(x)";
     }
 
@@ -400,14 +403,14 @@ void Vehicles::resPrint(ofstream &outputFile) {
     if (seatOccupancy.at(9) == false) {
         outputFile << "(9)";
     }
-    else{
+    else {
         outputFile << "(x)";
     }
 
     if (seatOccupancy.at(10) == false) {
         outputFile << "(10)";
     }
-    else{
+    else {
         outputFile << "(x)";
     }
 
@@ -479,7 +482,7 @@ void Vehicles::displayVehicle() {
     if (seatOccupancy.at(0) == false) {
         cout << "(0)";
     }
-    else{
+    else {
         cout << "(x)";
     }
 
@@ -487,7 +490,8 @@ void Vehicles::displayVehicle() {
 
     if (seatOccupancy.at(1) == false) {
         cout << "(1) ";
-    }else{
+    }
+    else {
         cout << "(x) ";
     }
 
@@ -496,7 +500,7 @@ void Vehicles::displayVehicle() {
     if (seatOccupancy.at(4) == false){
         cout << "(4)" << endl;
     }
-    else{
+    else {
         cout << "(x)" << endl;
     }
 
@@ -505,14 +509,14 @@ void Vehicles::displayVehicle() {
     if (seatOccupancy.at(2) == false) {
         cout << "(2) ";
     }
-    else{
+    else {
         cout << "(x) ";
     }
 
     if (seatOccupancy.at(3) == false) {
         cout << "(3)";
     }
-    else{
+    else {
         cout << "(x)";
     }
 
@@ -521,21 +525,21 @@ void Vehicles::displayVehicle() {
     if (seatOccupancy.at(5) == false) {
         cout << "(5)";
     }
-    else{
+    else {
         cout << "(x)";
     }
 
     if (seatOccupancy.at(6) == false) {
         cout << "(6)";
     }
-    else{
+    else {
         cout << "(x)";
     }
 
     if (seatOccupancy.at(7) == false) {
         cout << "(7)" << endl << endl;
     }
-    else{
+    else {
         cout << "(x)" << endl << endl;
     }
 
@@ -547,7 +551,7 @@ void Vehicles::displayVehicle() {
     if (seatOccupancy.at(8) == false) {
         cout << "(8)";
     }
-    else{
+    else {
         cout << "(x) ";
     }
 
@@ -556,7 +560,7 @@ void Vehicles::displayVehicle() {
     if (seatOccupancy.at(11) == false) {
         cout << "(11)";
     }
-    else{
+    else {
         cout << "(x)";
     }
 
@@ -565,14 +569,14 @@ void Vehicles::displayVehicle() {
     if (seatOccupancy.at(9) == false) {
         cout << "(9)";
     }
-    else{
+    else {
         cout << "(x)";
     }
 
     if (seatOccupancy.at(10) == false) {
         cout << "(10)";
     }
-    else{
+    else {
         cout << "(x)";
     }
 
@@ -606,7 +610,7 @@ void Vehicles::displayVehicle() {
     if (seatOccupancy.at(15) == false) {
         cout << "(15)";
     }
-    else{
+    else {
         cout << "(x)";
     }
 
@@ -615,7 +619,7 @@ void Vehicles::displayVehicle() {
     if (seatOccupancy.at(16) == false) {
         cout << "(16)";
     }
-    else{
+    else {
         cout << "(x)";
     }
 

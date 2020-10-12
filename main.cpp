@@ -19,14 +19,21 @@ int main() {
 
     ifstream inputFile;
     ofstream outputFile;
+
     vector<string> driverNames;
     vector<string> playerNames;
     vector<int> playerCredits;
+
     char userInput;
+
     string continueProgram = "YES";
     string tempName;
     string tmp;
+    string viewInfo;
+    int viewInfoNum;
+
     int playerNumber;
+
     bool validName = false;
 
 //Opening the list of team members
@@ -72,7 +79,6 @@ int main() {
         passengers.at(i).assignPassenger
         (playerNames.at(i), playerCredits.at(i));
     }
-
 
     while (continueProgram == "YES") {
         //Checks if the user inputted passenger is valid in the database
@@ -121,14 +127,13 @@ int main() {
             else {
                 cout << "Not a valid option, please try again." << endl;
             }
-            cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modify";
-            cout << ", 'd' to delete and 'p' to print" << endl;
+            cout << "Enter 'q' to quit, 'c' to create reservation, 'm' to modi";
+            cout << "fy, 'd' to delete and 'p' to print" << endl;
             cin >> userInput;
       }
 
-      cout << "Would you like to continue with a different player?"
-          << endl << endl << "Enter 'YES' to continue, and enter"
-          << " anything else to quit." << endl;
+      cout << endl << "If you would like to continue with a different player, "
+            << "enter 'YES', if not, input anything else" << endl;
 
       cin >> continueProgram;
       cin.ignore();
@@ -136,9 +141,54 @@ int main() {
 
   }
 
+//Prompts the user if they would like to print a specific vehicles
+cout << endl << "If you would like to print the seat availability of a";
+cout << " specific car, enter 'YES', if not, input anything else" << endl;
+
+cin >> viewInfo;
+
+//If the user inputs yes, it will prompt them to print a specific car
+if(viewInfo == "YES") {
+     cout << endl << "Enter the corresponding number to car you want to print";
+     cout << endl << endl;
+     cout << "1 : Purple Truck" << endl;
+     cout << "2 : Red Compact" << endl;
+     cout << "3 : Blue Compact" << endl;
+     cout << "4 : Yellow Compact" << endl;
+     cout << "5 : Blue Sedan" << endl;
+     cout << "6 : Green Sedan" << endl;
+
+     cin >> viewInfoNum;
+     cout << endl;
+
+     if (viewInfoNum == 1) {
+         vehicleDrivers.at(0).printTruckPurple();
+     }
+
+     if (viewInfoNum == 2) {
+         vehicleDrivers.at(0).printCompactRed();
+     }
+
+     if (viewInfoNum == 3) {
+         vehicleDrivers.at(0).printCompactBlue();
+     }
+
+     if (viewInfoNum == 4) {
+         vehicleDrivers.at(0).printCompactYellow();
+     }
+
+     if (viewInfoNum == 5) {
+         vehicleDrivers.at(0).printSedanBlue();
+     }
+
+     if (viewInfoNum == 6) {
+         vehicleDrivers.at(0).printSedanGreen();
+     }
+ }
+
   //Prompts user to enter if they want to print reservation data
   cout << endl << "If you would like to print all the reservation data to a tex"
-    << "t file, enter 'YES', if not enter anything else" << endl;
+    << "t file, enter 'YES', if not, enter anything else" << endl;
 
   //Checks for user input and calls the corresponding function
   cin >> tmp;
@@ -146,7 +196,7 @@ int main() {
       string adminPass;
       Vehicles vehicle;
       cout << "Enter the administrator password to print the reservations."
-        << endl;
+      << endl;
       cin >> adminPass;
 
       if (adminPass == "Password1") {
@@ -162,7 +212,8 @@ int main() {
           outputFile << "List of Passengers and their seating:" << endl << endl;
 
           for (int i = 0; i < 18; ++i) {
-              vehicle.printPassengerReservationToTxt(passengers.at(i), outputFile);
+              vehicle.printPassengerReservationToTxt
+                (passengers.at(i), outputFile);
           }
           outputFile.close();
       }
