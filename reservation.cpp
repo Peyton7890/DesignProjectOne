@@ -41,9 +41,10 @@ void Reservation::createReservation(People& player) {
         //the user may now input one of many seat types to find a seat
         if (seatSelection == 1) {
 
+            cout << endl << "Now enter the type of seat you would like."<< endl;
             cin >> carType;
 
-            //Checks if the the seat input is correct, if not it outputs an error
+            //Checks if the the seat input is correct if not it outputs an error
             if (carType == "front" || carType == "back"
             || carType == "sideBack" || carType == "middleBack") {
                 vehicle.setPassengerBySeat(player, carType);

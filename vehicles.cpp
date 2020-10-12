@@ -28,8 +28,9 @@ void Vehicles::setPassengerReservation(People& player, int seatNumber) {
             seatName.at(seatNumber) = player.name;
             seatOccupancy.at(seatNumber) = true;
             player.credits = player.credits - frontSeatVal;
-            cout << player.name << " has reserved seat number " << seatNumber
-            << " and now has " << player.credits << " credits." << endl << endl;
+            cout << endl <<player.name << " has reserved seat number "
+            << seatNumber << " and now has " << player.credits << " credits."
+            << endl << endl;
         }
         else if ((seatOccupancy.at(seatNumber) == false) &&
         (seatNumber < 18) && (player.credits > 2) &&
@@ -111,7 +112,7 @@ void Vehicles::setPassengerBySeat(People& player, string carType) {
                 seatName.at(seatNumber) = player.name;
             }
                 player.credits = player.credits - frontSeatVal;
-                cout << player.name
+                cout << endl << player.name
                 << " has reserved seat number " << seatNumber
                 << " and now has " << player.credits
                 << " credits." << endl << endl;
@@ -629,8 +630,8 @@ void Vehicles::displayVehicle() {
     cout << "You have two options to reserve a seat:" << endl << endl;
     cout << "Option 1:" << endl;
     cout << "Type the location of the seat you want in any car" << endl;
-    cout << "AVAILIBLE INPUTS: front, back, sideBack, middleBack" << endl << endl;
-    cout << "Option 2:" << endl;
+    cout << "AVAILIBLE INPUTS: front, back, sideBack, middleBack" << endl;
+    cout << endl << "Option 2:" << endl;
     cout << "Input the desired seat number" << endl << endl;
     cout << "Type '1' for the first method, type '2' for the second" << endl;
 }

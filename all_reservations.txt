@@ -1,7 +1,7 @@
 
 Truck      Compact       Sedan       
 Purple      Red          Blue         
-(-)(0)     (-) (1)      (-)   (4)
+(-)(x)     (-) (1)      (-)   (4)
            (2) (3)      (5)(6)(7)
 
             Blue        Green       
@@ -28,7 +28,7 @@ Sarah Ward has not reserved a seat and has 0 credits.
 Jeff Howard has not reserved a seat and has 4 credits.
 Amy Bryant has not reserved a seat and has 8 credits.
 Carl Gray has not reserved a seat and has 1 credits.
-Sam Miller has not reserved a seat and has 5 credits.
+Sam Miller has reserved seat #0 and has 0 credits.
 Rob Bell has not reserved a seat and has 2 credits.
 Mary Baker has not reserved a seat and has 5 credits.
 Peter Torres has not reserved a seat and has 6 credits.

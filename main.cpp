@@ -83,7 +83,7 @@ int main() {
 
             for (int i = 0; i < playerNames.size(); i++) {
                 if (playerNames.at(i) == tempName) {
-                    cout << "Valid User" << endl;
+                    cout << endl << "Valid User" << endl << endl;
                     playerNumber = i;
                     validName = true;
                     break;
@@ -126,8 +126,9 @@ int main() {
             cin >> userInput;
       }
 
-      cout << "Would you like to continue with a different player?" << endl;
-      cout << "Enter 'YES' to continue, and enter anything else to quit." << endl;
+      cout << "Would you like to continue with a different player?"
+          << endl << endl << "Enter 'YES' to continue, and enter"
+          << " anything else to quit." << endl;
 
       cin >> continueProgram;
       cin.ignore();
@@ -136,15 +137,15 @@ int main() {
   }
 
   //Prompts user to enter if they want to print reservation data
-  cout << "If you would like to print all the reservation data,"
-    << " enter 'YES', if not enter anything else" << endl;
+  cout << endl << "If you would like to print all the reservation data to a tex"
+    << "t file, enter 'YES', if not enter anything else" << endl;
 
   //Checks for user input and calls the corresponding function
   cin >> tmp;
   if (tmp == "YES") {
       string adminPass;
       Vehicles vehicle;
-      cout << "Enter the administrator password to view the reservations."
+      cout << "Enter the administrator password to print the reservations."
         << endl;
       cin >> adminPass;
 
